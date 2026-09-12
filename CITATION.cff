@@ -1,0 +1,71 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the archived release and the manuscript below."
+type: software
+title: "Reproduction package: unsupervised and semi-supervised anomaly detection for credit card fraud under chronological evaluation"
+abstract: >
+  Revision pipeline (v2) for the manuscript "Unsupervised and Semi-Supervised
+  Anomaly Detection for Credit Card Fraud: A Chronological Benchmark and a
+  Hybrid Bridge to Supervised Learning". Benchmarks five classical detectors
+  (Isolation Forest, LOF, One-Class SVM, DBSCAN, K-Means) on two public fraud
+  datasets (ULB creditcard.csv and PaySim) under a leakage-free chronological
+  protocol: explicit out-of-sample scoring for LOF and DBSCAN, decision
+  thresholds fitted on validation and applied unchanged to the test stream, and
+  three named fitting regimes (label-free, normal-only, oracle). The scripts of
+  the submitted version are included unmodified for auditability.
+authors:
+  - family-names: Elbadraoui
+    given-names: Abdellatif
+    orcid: "https://orcid.org/0009-0008-1779-7980"
+    affiliation: >
+      Engineering Sciences Laboratory, National School of Applied Sciences,
+      Ibn Tofail University, Kenitra, Morocco
+  - family-names: Mouhssine
+    given-names: Yassine
+    affiliation: >
+      Laboratory of Analyzing and Modeling Systems for Decision Support
+      (LAMSAD), Hassan I University, Settat, Morocco
+  - family-names: El Alaoui
+    given-names: Abdelkader
+    affiliation: >
+      Rabat Business School, International University of Rabat (UIR),
+      Rabat, Morocco
+  - family-names: Ouatik El Alaoui
+    given-names: Said
+    affiliation: >
+      Engineering Sciences Laboratory, National School of Applied Sciences,
+      Ibn Tofail University, Kenitra, Morocco
+repository-code: "https://github.com/ABDELLATIFELBADRAOUI/unsupervised-fraud-detection"
+license: MIT
+version: "1.0.0"
+date-released: "2026-09-12"
+keywords:
+  - credit card fraud detection
+  - anomaly detection
+  - unsupervised learning
+  - one-class classification
+  - isolation forest
+  - local outlier factor
+  - DBSCAN
+  - chronological evaluation
+  - data leakage
+  - PR-AUC
+  - class imbalance
+  - reproducible research
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Elbadraoui
+      given-names: Abdellatif
+      orcid: "https://orcid.org/0009-0008-1779-7980"
+    - family-names: Mouhssine
+      given-names: Yassine
+    - family-names: El Alaoui
+      given-names: Abdelkader
+    - family-names: Ouatik El Alaoui
+      given-names: Said
+  title: >
+    Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud:
+    A Chronological Benchmark and a Hybrid Bridge to Supervised Learning
+  journal: "Array"
+  year: 2026
+  notes: "Manuscript ARRAY-D-26-04414, under revision"

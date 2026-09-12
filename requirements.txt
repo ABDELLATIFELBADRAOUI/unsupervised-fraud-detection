@@ -1,0 +1,17 @@
+# =============================================================================
+#  Reproduction package -- ARRAY-D-26-04414 (revision pipeline v2)
+#  "Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud:
+#   A Chronological Benchmark and a Hybrid Bridge to Supervised Learning"
+#
+#  Pinned to the environment of the reference run (2026-09-12, Python 3.11.0),
+#  as recorded in the run manifest written by section 1 of the notebook.
+#  Results are deterministic given SEED = 42 and identical input files; K-Means
+#  initialisation and the DBSCAN eps knee can vary at the last digit with the
+#  BLAS build, and wall-clock timings are hardware-dependent.
+# =============================================================================
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.0
+scipy==1.13.1
+matplotlib>=3.7,<4.0
+jupyterlab>=4.0

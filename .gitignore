@@ -1,0 +1,50 @@
+# ── Python ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Jupyter ──────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Data — NEVER commit datasets ────────────────────────────
+*.csv
+creditcard.csv
+PS_20174392719_1491204439457_log.csv
+paysim*.csv
+
+# ── Generated outputs (reproducible, not stored in repo) ─────
+benchmark_results.csv
+paysim_benchmark_results.csv
+*_kdistance.png
+
+# ── LaTeX ────────────────────────────────────────────────────
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.fls
+*.fdb_latexmk
+
+# ── OS ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDEs ─────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
