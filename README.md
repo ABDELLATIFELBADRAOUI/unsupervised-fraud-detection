@@ -9,6 +9,13 @@ Code accompanying the manuscript
 >
 > *Array* (Elsevier) — manuscript ARRAY-D-26-04414, under revision
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22726142.svg)](https://doi.org/10.5281/zenodo.22726142)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+Archived on Zenodo: **[10.5281/zenodo.22726142](https://doi.org/10.5281/zenodo.22726142)**
+(concept DOI, always resolves to the latest version;
+release `v1.0.0` is [10.5281/zenodo.22726143](https://doi.org/10.5281/zenodo.22726143)).
+
 This repository contains the **revision pipeline (v2)**, which is the implementation
 actually run for the revised manuscript, together with the **scripts used for the
 original submission (v1)** so that every reported change is auditable.
@@ -163,7 +170,8 @@ notebook, reported in the manuscript, and swept in the sensitivity section.
 
 ## 7. Citation
 
-See `CITATION.cff`. Please cite the manuscript, and this archive by its DOI.
+See `CITATION.cff`. Please cite the manuscript, and this archive by its DOI
+(10.5281/zenodo.22726142 for all versions, 10.5281/zenodo.22726143 for `v1.0.0`).
 
 ## 8. License
 

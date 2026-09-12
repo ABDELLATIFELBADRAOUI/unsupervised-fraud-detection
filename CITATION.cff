@@ -35,6 +35,13 @@ authors:
       Engineering Sciences Laboratory, National School of Applied Sciences,
       Ibn Tofail University, Kenitra, Morocco
 repository-code: "https://github.com/ABDELLATIFELBADRAOUI/unsupervised-fraud-detection"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22726142
+    description: Concept DOI, resolves to the latest archived version
+  - type: doi
+    value: 10.5281/zenodo.22726143
+    description: DOI of release v1.0.0
 license: MIT
 version: "1.0.0"
 date-released: "2026-09-12"
