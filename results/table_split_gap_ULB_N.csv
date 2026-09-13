@@ -1,0 +1,7 @@
+detector,random,random_matched,chronological,gap_prevalence,gap_temporal
+LOF,0.6712,0.5452,0.6032,0.126,-0.058
+Ensemble,0.2458,0.2544,0.14,-0.0086,0.1144
+OneClassSVM,0.2153,0.1878,0.1248,0.0275,0.063
+KMeans,0.1456,0.1589,0.0673,-0.0133,0.0915
+IsolationForest,0.125,0.1074,0.0369,0.0176,0.0705
+DBSCAN,0.0661,0.1152,0.025,-0.0491,0.0902

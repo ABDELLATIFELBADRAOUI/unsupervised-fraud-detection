@@ -1,0 +1,4 @@
+score,PR_AUC,ROC_AUC
+"|delta_orig| (raw, unfitted)",0.0033,0.0805
+"|delta_dest| (raw, unfitted)",0.123,0.5507
+|delta_orig| + |delta_dest|,0.024,0.3889

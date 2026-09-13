@@ -1,0 +1,22 @@
+{
+  "created": "2026-09-12T13:06:08.705139",
+  "python": "3.11.0",
+  "numpy": "1.26.4",
+  "pandas": "2.2.2",
+  "sklearn": "1.5.0",
+  "scipy": "1.13.1",
+  "seed": 42,
+  "rho_grid": [
+    0.001,
+    0.005,
+    0.01,
+    0.02
+  ],
+  "rho_default": 0.005,
+  "subsample_rule": "random",
+  "caps": {
+    "lof": 20000,
+    "ocsvm": 20000,
+    "dbscan": 20000
+  }
+}

@@ -1,0 +1,9 @@
+dataset,fold,n_pos,n,prevalence,powered
+PaySim,0,282,509009,0.00055,yes
+PaySim,1,388,509009,0.00076,yes
+PaySim,2,320,509009,0.00063,yes
+PaySim,3,320,509009,0.00063,yes
+PaySim,4,3712,509009,0.00729,yes
+ULB,0,119,56961,0.00209,yes
+ULB,1,57,56961,0.001,yes
+ULB,2,75,56961,0.00132,yes
