@@ -1,0 +1,37 @@
+dataset,regime,detector,chronological,random,random_matched,gap_total,gap_prevalence,gap_temporal
+PaySim,N (normal-only),DBSCAN,0.0248,0.0066,0.0963,-0.0182,-0.0897,0.0715
+PaySim,N (normal-only),Ensemble,0.1706,0.0407,0.1134,-0.1299,-0.0727,-0.0572
+PaySim,N (normal-only),IsolationForest,0.0165,0.008,0.0182,-0.0084,-0.0101,0.0017
+PaySim,N (normal-only),KMeans,0.0458,0.0151,0.0362,-0.0307,-0.0211,-0.0096
+PaySim,N (normal-only),LOF,0.003,0.2248,0.3005,0.2217,-0.0758,0.2975
+PaySim,N (normal-only),OneClassSVM,0.1018,0.0674,0.1399,-0.0344,-0.0726,0.0382
+PaySim,"O (oracle, upper bound)",DBSCAN,0.0248,0.0064,0.0623,-0.0184,-0.0559,0.0375
+PaySim,"O (oracle, upper bound)",Ensemble,0.1502,0.0325,0.0947,-0.1177,-0.0622,-0.0555
+PaySim,"O (oracle, upper bound)",IsolationForest,0.0161,0.0064,0.0209,-0.0097,-0.0145,0.0048
+PaySim,"O (oracle, upper bound)",KMeans,0.0419,0.015,0.0361,-0.0269,-0.0211,-0.0058
+PaySim,"O (oracle, upper bound)",LOF,0.0031,0.1509,0.2897,0.1478,-0.1388,0.2866
+PaySim,"O (oracle, upper bound)",OneClassSVM,0.1048,0.0385,0.0621,-0.0663,-0.0235,-0.0427
+PaySim,U (label-free),DBSCAN,0.0248,0.0064,0.0623,-0.0184,-0.0559,0.0375
+PaySim,U (label-free),Ensemble,0.1502,0.0324,0.0971,-0.1178,-0.0648,-0.053
+PaySim,U (label-free),IsolationForest,0.0161,0.0064,0.0209,-0.0097,-0.0145,0.0048
+PaySim,U (label-free),KMeans,0.0419,0.015,0.0361,-0.0269,-0.0211,-0.0058
+PaySim,U (label-free),LOF,0.0031,0.1509,0.2897,0.1478,-0.1388,0.2866
+PaySim,U (label-free),OneClassSVM,0.1054,0.0396,0.0668,-0.0658,-0.0271,-0.0387
+ULB,N (normal-only),DBSCAN,0.025,0.0661,0.1152,0.0411,-0.0491,0.0902
+ULB,N (normal-only),Ensemble,0.14,0.2458,0.2544,0.1058,-0.0086,0.1144
+ULB,N (normal-only),IsolationForest,0.0369,0.125,0.1074,0.0881,0.0176,0.0705
+ULB,N (normal-only),KMeans,0.0673,0.1456,0.1589,0.0783,-0.0133,0.0915
+ULB,N (normal-only),LOF,0.6032,0.6712,0.5452,0.068,0.126,-0.058
+ULB,N (normal-only),OneClassSVM,0.1248,0.2153,0.1878,0.0906,0.0275,0.063
+ULB,"O (oracle, upper bound)",DBSCAN,0.0247,0.0661,0.0559,0.0414,0.0102,0.0312
+ULB,"O (oracle, upper bound)",Ensemble,0.0695,0.1525,0.0992,0.083,0.0533,0.0297
+ULB,"O (oracle, upper bound)",IsolationForest,0.0546,0.1449,0.1318,0.0904,0.0131,0.0773
+ULB,"O (oracle, upper bound)",KMeans,0.0679,0.1423,0.1533,0.0745,-0.0109,0.0854
+ULB,"O (oracle, upper bound)",LOF,0.0763,0.1091,0.0714,0.0328,0.0377,-0.0049
+ULB,"O (oracle, upper bound)",OneClassSVM,0.0838,0.1067,0.0744,0.0229,0.0323,-0.0094
+ULB,U (label-free),DBSCAN,0.0247,0.0661,0.0559,0.0414,0.0102,0.0312
+ULB,U (label-free),Ensemble,0.0695,0.1525,0.0992,0.083,0.0533,0.0297
+ULB,U (label-free),IsolationForest,0.0546,0.1449,0.1318,0.0904,0.0131,0.0773
+ULB,U (label-free),KMeans,0.0679,0.1423,0.1533,0.0745,-0.0109,0.0854
+ULB,U (label-free),LOF,0.0763,0.1091,0.0714,0.0328,0.0377,-0.0049
+ULB,U (label-free),OneClassSVM,0.0839,0.1067,0.0744,0.0229,0.0323,-0.0094

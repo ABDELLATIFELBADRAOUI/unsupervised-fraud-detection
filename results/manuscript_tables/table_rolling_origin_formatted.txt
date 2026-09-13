@@ -1,0 +1,27 @@
+PR-AUC across rolling origins. Fold prevalence varies, so lift over each fold's own random baseline is reported alongside the raw value. cv above 0.5 indicates that the detector ordering is not stable.
+
+dataset	regime	detector	pr_mean	pr_std	lift_mean	cv	n
+PaySim	N (normal-only)	DBSCAN	0.0495	0.105	9.683	2.121	5
+PaySim	N (normal-only)	Ensemble	0.1089	0.1414	72.9488	1.298	5
+PaySim	N (normal-only)	IsolationForest	0.01	0.0162	4.6001	1.62	5
+PaySim	N (normal-only)	KMeans	0.0182	0.0299	8.0219	1.643	5
+PaySim	N (normal-only)	LOF	0.0018	0.0025	0.9715	1.389	5
+PaySim	N (normal-only)	OneClassSVM	0.0668	0.0945	38.8718	1.415	5
+PaySim	U (label-free)	DBSCAN	0.0094	0.0153	4.1816	1.628	5
+PaySim	U (label-free)	Ensemble	0.0823	0.1147	49.0929	1.394	5
+PaySim	U (label-free)	IsolationForest	0.0106	0.0182	4.2222	1.717	5
+PaySim	U (label-free)	KMeans	0.0134	0.0193	7.349	1.44	5
+PaySim	U (label-free)	LOF	0.0017	0.0025	0.9703	1.471	5
+PaySim	U (label-free)	OneClassSVM	0.0467	0.0724	23.4014	1.55	5
+ULB	N (normal-only)	DBSCAN	0.0787	0.1029	42.428	1.307	3
+ULB	N (normal-only)	Ensemble	0.2866	0.1292	206.9498	0.451	3
+ULB	N (normal-only)	IsolationForest	0.1413	0.1948	74.7536	1.379	3
+ULB	N (normal-only)	KMeans	0.1534	0.1819	85.0123	1.186	3
+ULB	N (normal-only)	LOF	0.2353	0.2849	190.5407	1.211	3
+ULB	N (normal-only)	OneClassSVM	0.18	0.1287	113.9206	0.715	3
+ULB	U (label-free)	DBSCAN	0.0802	0.1019	43.5806	1.271	3
+ULB	U (label-free)	Ensemble	0.051	0.0025	38.4418	0.049	3
+ULB	U (label-free)	IsolationForest	0.1375	0.1694	75.3264	1.232	3
+ULB	U (label-free)	KMeans	0.0729	0.0605	44.2821	0.83	3
+ULB	U (label-free)	LOF	0.0219	0.0357	16.6181	1.63	3
+ULB	U (label-free)	OneClassSVM	0.0945	0.0734	57.9234	0.777	3

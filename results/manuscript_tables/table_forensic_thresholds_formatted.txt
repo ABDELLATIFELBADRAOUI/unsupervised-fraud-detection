@@ -1,0 +1,9 @@
+The three candidate thresholding rules applied to the same scores. An alert count is meaningful only together with the rule that produced it; the tie ratio is reported separately, since a large tie mass distorts any quantile threshold.
+
+dataset	detector	rho_label_derived	expected_rho_N	alerts_native	alerts_v1_eq13	alerts_v2_validation	distinct_test_scores	tie_ratio
+ULB	IsolationForest	0.002107	121	84	120	83	55638	0.023244
+ULB	LOF	0.002107	121	261	120	215	56376	0.010288
+ULB	OneClassSVM	0.002107	121	4571	120	89	56716	0.004319
+PaySim	IsolationForest	0.000836	1064	4040	1064	43	515505	0.594896
+PaySim	LOF	0.000836	1064	993167	1064	343558	1181871	0.071239
+PaySim	OneClassSVM	0.000836	1064	1272524	1065	930	1271439	0.000853

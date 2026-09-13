@@ -1,0 +1,37 @@
+dataset,regime,detector,rho,budgeted_alerts,observed_alerts,observed_over_budgeted
+PaySim,N (normal-only),DBSCAN,0.005,6363,1060,0.17
+PaySim,N (normal-only),Ensemble,0.005,6363,1322,0.21
+PaySim,N (normal-only),IsolationForest,0.005,6363,1003,0.16
+PaySim,N (normal-only),KMeans,0.005,6363,1105,0.17
+PaySim,N (normal-only),LOF,0.005,6363,374177,58.81
+PaySim,N (normal-only),OneClassSVM,0.005,6363,1443,0.23
+PaySim,"O (oracle, upper bound)",DBSCAN,0.00084,1064,80,0.08
+PaySim,"O (oracle, upper bound)",Ensemble,0.00084,1064,72,0.07
+PaySim,"O (oracle, upper bound)",IsolationForest,0.00084,1064,43,0.04
+PaySim,"O (oracle, upper bound)",KMeans,0.00084,1064,147,0.14
+PaySim,"O (oracle, upper bound)",LOF,0.00084,1064,343558,322.89
+PaySim,"O (oracle, upper bound)",OneClassSVM,0.00084,1064,930,0.87
+PaySim,U (label-free),DBSCAN,0.005,6363,1060,0.17
+PaySim,U (label-free),Ensemble,0.005,6363,965,0.15
+PaySim,U (label-free),IsolationForest,0.005,6363,857,0.13
+PaySim,U (label-free),KMeans,0.005,6363,1244,0.2
+PaySim,U (label-free),LOF,0.005,6363,358002,56.26
+PaySim,U (label-free),OneClassSVM,0.005,6363,1464,0.23
+ULB,N (normal-only),DBSCAN,0.005,285,179,0.63
+ULB,N (normal-only),Ensemble,0.005,285,193,0.68
+ULB,N (normal-only),IsolationForest,0.005,285,184,0.65
+ULB,N (normal-only),KMeans,0.005,285,179,0.63
+ULB,N (normal-only),LOF,0.005,285,633,2.22
+ULB,N (normal-only),OneClassSVM,0.005,285,196,0.69
+ULB,"O (oracle, upper bound)",DBSCAN,0.00211,120,75,0.62
+ULB,"O (oracle, upper bound)",Ensemble,0.00211,120,73,0.61
+ULB,"O (oracle, upper bound)",IsolationForest,0.00211,120,83,0.69
+ULB,"O (oracle, upper bound)",KMeans,0.00211,120,75,0.62
+ULB,"O (oracle, upper bound)",LOF,0.00211,120,215,1.79
+ULB,"O (oracle, upper bound)",OneClassSVM,0.00211,120,89,0.74
+ULB,U (label-free),DBSCAN,0.005,285,175,0.61
+ULB,U (label-free),Ensemble,0.005,285,188,0.66
+ULB,U (label-free),IsolationForest,0.005,285,168,0.59
+ULB,U (label-free),KMeans,0.005,285,198,0.69
+ULB,U (label-free),LOF,0.005,285,626,2.2
+ULB,U (label-free),OneClassSVM,0.005,285,198,0.69

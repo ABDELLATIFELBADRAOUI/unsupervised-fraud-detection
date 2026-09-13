@@ -1,0 +1,19 @@
+regime,detector,Precision,Recall,F1,ROC_AUC,PR_AUC,TP,FP,n_alerts
+N (normal-only),DBSCAN,0.1179,0.0294,0.047,0.8407,0.0248,125,935,1060
+N (normal-only),Ensemble,0.3147,0.0978,0.1492,0.9163,0.1706,416,906,1322
+N (normal-only),IsolationForest,0.0309,0.0073,0.0118,0.8133,0.0165,31,972,1003
+N (normal-only),KMeans,0.1258,0.0327,0.0519,0.8628,0.0458,139,966,1105
+N (normal-only),LOF,0.0001,0.0082,0.0002,0.493,0.003,35,374142,374177
+N (normal-only),OneClassSVM,0.2675,0.0907,0.1355,0.8708,0.1018,386,1057,1443
+"O (oracle, upper bound)",DBSCAN,0.0125,0.0002,0.0005,0.8407,0.0248,1,79,80
+"O (oracle, upper bound)",Ensemble,0.0417,0.0007,0.0014,0.9178,0.1502,3,69,72
+"O (oracle, upper bound)",IsolationForest,0.0,0.0,0.0,0.813,0.0161,0,43,43
+"O (oracle, upper bound)",KMeans,0.0068,0.0002,0.0005,0.8689,0.0419,1,146,147
+"O (oracle, upper bound)",LOF,0.0,0.0,0.0,0.4999,0.0031,0,343558,343558
+"O (oracle, upper bound)",OneClassSVM,0.2849,0.0623,0.1022,0.8738,0.1048,265,665,930
+U (label-free),DBSCAN,0.1179,0.0294,0.047,0.8407,0.0248,125,935,1060
+U (label-free),Ensemble,0.2456,0.0557,0.0908,0.9178,0.1502,237,728,965
+U (label-free),IsolationForest,0.0385,0.0078,0.0129,0.813,0.0161,33,824,857
+U (label-free),KMeans,0.1214,0.0355,0.0549,0.8689,0.0419,151,1093,1244
+U (label-free),LOF,0.0,0.0,0.0,0.4999,0.0031,0,358002,358002
+U (label-free),OneClassSVM,0.2609,0.0898,0.1336,0.8757,0.1054,382,1082,1464
