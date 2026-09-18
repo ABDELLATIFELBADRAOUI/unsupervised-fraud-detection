@@ -1,0 +1,27 @@
+{
+  "created": "2026-09-14T01:00:55.167711",
+  "tie_break_tolerance": 0.0001,
+  "tie_break_rule": "simplest configuration among those within 1e-4 of the best validation PR-AUC",
+  "paired_bootstrap_replicates": 2000,
+  "blocks": 50,
+  "files": [
+    "figures",
+    "phase0_manifest.json",
+    "table16_hyperparameter_selected.csv",
+    "table3_selected_block.csv",
+    "table9_rolling_origin_prlift.csv",
+    "table9_rolling_per_fold.csv",
+    "table_paired_bootstrap_ensemble.csv"
+  ],
+  "figures": [
+    "revision_v2\\phase0\\figures\\pr_ULB_U.png",
+    "revision_v2\\phase0\\figures\\pr_ULB_N.png",
+    "revision_v2\\phase0\\figures\\rolling_ULB_N.png",
+    "revision_v2\\phase0\\figures\\split_gap_ULB_N.png",
+    "revision_v2\\phase0\\figures\\pr_PaySim_U.png",
+    "revision_v2\\phase0\\figures\\pr_PaySim_N.png",
+    "revision_v2\\phase0\\figures\\rolling_PaySim_N.png",
+    "revision_v2\\phase0\\figures\\split_gap_PaySim_N.png",
+    "revision_v2\\phase0\\figures\\label_efficiency_ULB.png"
+  ]
+}
