@@ -27,8 +27,8 @@ authors:
       Ibn Tofail University, Kenitra, Morocco
 license: MIT
 repository-code: "https://github.com/ABDELLATIFELBADRAOUI/unsupervised-fraud-detection"
-version: "1.1.0"
-date-released: "2026-09-13"
+version: "1.2.0"
+date-released: "2026-09-18"
 identifiers:
   - type: doi
     value: 10.5281/zenodo.22726142
@@ -44,7 +44,7 @@ preferred-citation:
   type: article
   title: >-
     Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud:
-    A Chronological Benchmark and a Hybrid Bridge to Supervised Learning
+    A Chronological, Leakage-Controlled Benchmark
   authors:
     - family-names: El Badraoui
       given-names: Abdellatif

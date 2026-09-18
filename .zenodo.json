@@ -1,6 +1,6 @@
 {
   "title": "Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud: reproduction package",
-  "description": "<p>Complete reproduction package for the manuscript <em>Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud: A Chronological Benchmark and a Hybrid Bridge to Supervised Learning</em> (Array).</p><p>The notebook benchmarks five classical anomaly detectors (Isolation Forest, Local Outlier Factor, One-Class SVM, DBSCAN, K-Means) on the ULB credit card and PaySim datasets under a chronological protocol. Decision thresholds and score transformations are estimated on a validation window and applied unchanged, so the decision assigned to a transaction does not depend on the other transactions in the evaluation set; this property is verified numerically at run time rather than asserted.</p><p>The package covers three fitting regimes including an explicit oracle upper bound, a prevalence-controlled comparison of random and chronological splits, rolling-origin evaluation with block-bootstrap intervals, hyperparameter and subsampling sensitivity analyses, a label-efficiency curve for the hybrid bridge, a feature ablation on the synthetic dataset, and per-transaction operational measurements. Every reported value is traceable to a row of the canonical results file through its run_id.</p><p>Datasets are not redistributed; both are public and linked in the README.</p>",
+  "description": "<p>Complete reproduction package for the manuscript <em>Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud: A Chronological, Leakage-Controlled Benchmark</em> (Array).</p><p>The notebook benchmarks five classical anomaly detectors (Isolation Forest, Local Outlier Factor, One-Class SVM, DBSCAN, K-Means) on the ULB credit card and PaySim datasets under a chronological protocol. Decision thresholds and score transformations are estimated on a validation window and applied unchanged, so the decision assigned to a transaction does not depend on the other transactions in the evaluation set; this property is verified numerically at run time rather than asserted.</p><p>The package covers three fitting regimes including an explicit oracle upper bound, a prevalence-controlled comparison of random and chronological splits, rolling-origin evaluation with block-bootstrap intervals, hyperparameter and subsampling sensitivity analyses, a label-efficiency curve for the hybrid bridge, a feature ablation on the synthetic dataset, and per-transaction operational measurements. Every reported value is traceable to a row of the canonical results file through its run_id.</p><p>Datasets are not redistributed; both are public and linked in the README.</p><p><strong>Version 1.2.0</strong> adds <code>notebooks/revision_pipeline_v2_1.ipynb</code>, a corrected pipeline that reproduces the archived results with its default settings, and the <code>results/phase0/</code> outputs behind the validation-selected hyperparameter configurations, the paired bootstrap comparisons and the per-fold rolling-origin values. Five defects found in a post-revision audit of the code are fixed: a silent fallback in the DBSCAN out-of-sample rule that replaced the core set with the whole reference sample when no core point was found, the absence of any diagnostic for that degeneracy, two mutually inconsistent hyperparameter tie-break rules, an invariance probe that covered only the ensemble, and the absence of the ensemble from the hyperparameter sweep and the operational table. <code>revision_pipeline_v2.ipynb</code> is retained unchanged for provenance.</p>",
   "creators": [
     {
       "name": "El Badraoui, Abdellatif",
@@ -33,7 +33,9 @@
     "class imbalance",
     "data leakage",
     "reproducibility",
-    "calibration drift"
+    "calibration drift",
+    "leakage-controlled evaluation"
   ],
-  "version": "1.1.0"
+  "version": "1.2.0",
+  "publication_date": "2026-09-18"
 }

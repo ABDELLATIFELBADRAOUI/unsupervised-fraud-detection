@@ -1,8 +1,8 @@
 # Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud
 
 Reproduction package for the manuscript *Unsupervised and Semi-Supervised Anomaly
-Detection for Credit Card Fraud: A Chronological Benchmark and a Hybrid Bridge to
-Supervised Learning* (Array, manuscript ARRAY-D-26-04414).
+Detection for Credit Card Fraud: A Chronological, Leakage-Controlled Benchmark*
+(Array, manuscript ARRAY-D-26-04414).
 
 Every table and figure in the paper is produced by `revision_pipeline_v2.ipynb`, and the
 outputs of that run are committed under `results/`, so the tables can be checked without
@@ -18,6 +18,12 @@ files by `scripts/make_manuscript_tables.py`; no table is typed by hand.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22726142.svg)](https://doi.org/10.5281/zenodo.22726142)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+**Which notebook to run.** `notebooks/revision_pipeline_v2_1.ipynb` is the current
+pipeline and the one to use. `notebooks/revision_pipeline_v2.ipynb` is the run that
+produced the tables of the revised manuscript and is kept unchanged for provenance;
+v2.1 reproduces its results with the default settings. [CHANGELOG.md](CHANGELOG.md)
+lists the five defects v2.1 fixes.
 
 Archived on Zenodo: **[10.5281/zenodo.22726142](https://doi.org/10.5281/zenodo.22726142)** (concept DOI, always resolves to the latest version).
 
@@ -138,6 +144,20 @@ distance to the nearest training core point, with *z* labelled noise when that
 distance exceeds ε. The score is continuous, computed per point, and independent of
 the test set. This is what the manuscript previously called "neighbour propagation"
 without defining it.
+
+> **Known limitation, reported rather than hidden.** The rule is only as good as the
+> clustering it rests on, and v2 did not report how large the core set actually was.
+> On ULB it holds between 3 and 46 points across repeated reference-set draws; on
+> PaySim it is degenerate — three of five draws yield a single core point, and in the
+> remaining two the core set spans the whole capped sample, so the score reduces to a
+> 1-NN distance to the training subsample. v2 made that substitution silently
+> (`core = ref[db.core_sample_indices_] if len(db.core_sample_indices_) else ref`);
+> v2.1 records it (`n_core`, `core_fraction`, `degenerate_core`, `core_fallback`) and
+> raises a `RuntimeWarning`. The PaySim DBSCAN column should therefore be read as a
+> diagnostic of the radius-selection rule rather than as a measurement of DBSCAN.
+> Section 3.4 of the manuscript states this. Setting `REQUIRE_NONDEGENERATE_CORE = True`
+> widens `eps` until the core set is usable, which changes every table containing a
+> DBSCAN column.
 
 ---
 
