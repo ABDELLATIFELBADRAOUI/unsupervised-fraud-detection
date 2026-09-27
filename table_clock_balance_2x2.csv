@@ -1,0 +1,13 @@
+regime,detector,step_and_residuals_headline,residuals_removed,step_removed,both_removed
+U,IsolationForest,0.0161,0.0143,0.0129,0.0159
+U,LOF,0.0031,0.0026,0.1483,0.0684
+U,OneClassSVM,0.1054,0.0552,0.0849,0.0506
+U,DBSCAN,0.0248,0.0556,0.0215,0.0192
+U,KMeans,0.0419,0.0369,0.0366,0.0311
+U,Ensemble,0.1502,0.0191,0.059,0.0516
+N,IsolationForest,0.0165,0.0137,0.0124,0.0151
+N,LOF,0.003,0.0025,0.1905,0.0717
+N,OneClassSVM,0.1018,0.047,0.1048,0.0529
+N,DBSCAN,0.0248,0.0226,0.0215,0.0192
+N,KMeans,0.0458,0.0369,0.0381,0.0311
+N,Ensemble,0.1706,0.042,0.0686,0.0506

@@ -1,0 +1,3 @@
+dataset,PR_AUC_position_only,ROC_AUC_position_only,random_ranker_PR_AUC,share_of_frauds_in_last_3_deciles
+ULB,0.001,0.4095,0.0013,0.16
+PaySim,0.0846,0.7824,0.0033,0.8543

@@ -1,5 +1,47 @@
 # Changelog
 
+## [1.3.0] — 2026-09-27
+
+Accompanies the revised manuscript ARRAY-D-26-04414, now titled *Rethinking Unsupervised
+Credit Card Fraud Detection: A Leakage-Controlled Chronological Benchmark*.
+
+### Added
+
+- `scripts/clock_ablation/ONE_CELL_clock_ablation.py` and
+  `scripts/clock_ablation/CELL_2_paysim_no_step_no_residuals.py`: the ablation of the absolute
+  clocks (`Time` on ULB, `step` on PaySim) and the clock × balance-residual design of Table 13.
+  They run after `notebooks/revision_pipeline_v2_1.ipynb`, append rows to
+  `canonical_results.csv` under `clock_ablation`, `clock_ablation_ref` (the ULB run with the
+  clock, which reproduces the headline values; `table_clock_reproduction_check.csv`) and
+  `clock_balance_ablation`, and write `table_clock_ablation.csv`, `table_clock_balance_2x2.csv`,
+  `table_clock_position_corr.csv`, `table_clock_position_baseline.csv`,
+  `table_clock_reproduction_check.csv` and `manifest_clock_ablation.json`. Headline rows are
+  not modified.
+- `results/canonical_results.csv` now holds 8,188 rows over 628 `run_id`s (7,372 over 532 in
+  1.2.0).
+- `results/test_scores.npz`: the saved headline test scores (83 MB), from which the
+  200,000-row window comparison of Table 18 and the position statistics of Section 4.7 can be
+  recomputed.
+- `scripts/select_hyperparameters.py`: rebuilds `results/phase0/table16_hyperparameter_selected.csv`
+  and `results/phase0/table3_selected_block.csv` from `results/table_hyperparameter_sensitivity.csv`.
+- `scripts/figure1_framework.tex` and `results/figures/figure1_framework.pdf`: Figure 1.
+
+### Fixed
+
+- **Tie-break on validation PR-AUC.** On the 4-decimal values, the comparison
+  `val_PR_AUC >= top - 1e-4` excluded one tie through floating-point rounding (PaySim,
+  label-free, Isolation Forest: 0.0022 and 0.0021). The comparison now subtracts 1e-9 in the
+  three places it appears. The selected configuration of that cell becomes 100 trees
+  (validation 0.0021, test 0.0618); no other selection changes. The stored outputs of those
+  notebook cells predate the fix; the phase-0 files are regenerated.
+- `v1_submitted/README.md`: the submitted code always fitted LOF with `novelty=True`; the
+  defect was the `novelty=False` entry of the submitted Table 3.
+
+### Notes
+
+- Section 8b of the notebook (the ensemble rebuilt at the validation-selected configurations)
+  is not used in the manuscript, and its output is not archived.
+
 ## [1.2.0] — 2026-09-18
 
 Correction release. `notebooks/revision_pipeline_v2_1.ipynb` **reproduces the archived
