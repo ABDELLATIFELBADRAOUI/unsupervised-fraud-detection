@@ -43,8 +43,8 @@ keywords:
 preferred-citation:
   type: article
   title: >-
-    Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud:
-    A Chronological, Leakage-Controlled Benchmark
+    Rethinking Unsupervised Credit Card Fraud Detection:
+    A Leakage-Controlled Chronological Benchmark
   authors:
     - family-names: El Badraoui
       given-names: Abdellatif

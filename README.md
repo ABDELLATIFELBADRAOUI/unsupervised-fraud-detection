@@ -4,11 +4,12 @@ Reproduction package for the manuscript *Rethinking Unsupervised Credit Card Fra
 Detection: A Leakage-Controlled Chronological Benchmark* (Array, manuscript
 ARRAY-D-26-04414).
 
-Every table and figure in the paper is produced by `revision_pipeline_v2.ipynb`, and the
-outputs of that run are committed under `results/`, so the tables can be checked without
-re-running anything. Table 13 and the clock-ablation statements of Sections 4.3 and 4.7
-come from the two cells in `scripts/clock_ablation/`, run after the notebook; Figure 1 is
-drawn from `scripts/figure1_framework.tex`.
+The results reported in the paper are produced by `revision_pipeline_v2.ipynb`, supplemented
+by the two cells in `scripts/clock_ablation/`, run after the notebook (Table 13 and the
+clock-ablation statements of Sections 4.3 and 4.7), and by `scripts/select_hyperparameters.py`,
+which rebuilds the validation-selected configurations from the notebook's hyperparameter
+grid. Figure 1 is drawn from `scripts/figure1_framework.tex`. The result files are committed
+under `results/`, so the tables can be checked without re-running anything.
 
 `results/canonical_results.csv` is the canonical frame: 8,188 rows over 628 `run_id`s,
 covering the headline run, the rolling origins, the contamination sweep, the split
@@ -172,8 +173,8 @@ Running the notebook writes to `revision_v2/`:
 ```
 manifest.json              versions, seeds, grids, caps
 canonical_results.csv      one row per (run_id, metric)
-test_scores.npz            raw headline test scores per configuration (83 MB; committed
-                           as results/test_scores.npz from v1.3.0)
+test_scores.npz            raw headline test scores per configuration (83 MB; not tracked
+                           by Git, archived as a separate file in the Zenodo record)
 table_*.csv                individual result tables
 manuscript_tables/         the same tables formatted for the paper
 figures/                   PR, ROC, rolling origin, label efficiency,

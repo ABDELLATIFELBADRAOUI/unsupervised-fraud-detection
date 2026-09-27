@@ -19,9 +19,6 @@ Credit Card Fraud Detection: A Leakage-Controlled Chronological Benchmark*.
   not modified.
 - `results/canonical_results.csv` now holds 8,188 rows over 628 `run_id`s (7,372 over 532 in
   1.2.0).
-- `results/test_scores.npz`: the saved headline test scores (83 MB), from which the
-  200,000-row window comparison of Table 18 and the position statistics of Section 4.7 can be
-  recomputed.
 - `scripts/select_hyperparameters.py`: rebuilds `results/phase0/table16_hyperparameter_selected.csv`
   and `results/phase0/table3_selected_block.csv` from `results/table_hyperparameter_sensitivity.csv`.
 - `scripts/figure1_framework.tex` and `results/figures/figure1_framework.pdf`: Figure 1.
@@ -39,6 +36,9 @@ Credit Card Fraud Detection: A Leakage-Controlled Chronological Benchmark*.
 
 ### Notes
 
+- `test_scores.npz`, the saved headline test scores (83 MB), from which the 200,000-row window
+  comparison of Table 18 and the position statistics of Section 4.7 can be recomputed, is not
+  tracked by Git (see `.gitignore`); it is archived as a separate file in the Zenodo record.
 - Section 8b of the notebook (the ensemble rebuilt at the validation-selected configurations)
   is not used in the manuscript, and its output is not archived.
 
