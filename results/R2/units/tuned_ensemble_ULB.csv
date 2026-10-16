@@ -1,0 +1,29 @@
+dataset,regime,setting,detector,config,val_PR_AUC,test_PR_AUC,window
+ULB,U,fixed,IsolationForest,{},0.027056665731508302,0.054562789355073034,full validation and test windows
+ULB,U,fixed,LOF,{},0.10102327706009445,0.07627939933401451,full validation and test windows
+ULB,U,fixed,OneClassSVM,{},0.03790766999696716,0.0838610899727195,full validation and test windows
+ULB,U,fixed,DBSCAN,{},0.01301939319140694,0.024725100118224274,full validation and test windows
+ULB,U,fixed,KMeans,{},0.0347344205637976,0.06788595503536499,full validation and test windows
+ULB,U,fixed,Ensemble,members at the fixed configuration,0.03968701228816897,0.06951265687905143,full validation and test windows
+ULB,U,fixed,Ensemble4,members at the fixed configuration,0.04714963978216344,0.07491319241219167,full validation and test windows
+ULB,U,selected,IsolationForest,"{""n_estimators"": 100}",0.027194089629572524,0.05179661056347977,full validation and test windows
+ULB,U,selected,LOF,"{""n_neighbors"": 50}",0.19685870886729762,0.31750007706687516,full validation and test windows
+ULB,U,selected,OneClassSVM,"{""gamma"": ""scale""}",0.03790766999696716,0.0838610899727195,full validation and test windows
+ULB,U,selected,DBSCAN,"{""min_samples"": 5}",0.03209516644026569,0.07913227172558267,full validation and test windows
+ULB,U,selected,KMeans,"{""k"": 16}",0.03549349408508114,0.07941541882216303,full validation and test windows
+ULB,U,selected,Ensemble,members at the selected configuration,0.05248864885362409,0.12095715747226257,full validation and test windows
+ULB,U,selected,Ensemble4,members at the selected configuration,0.05656440134219954,0.12760976295433918,full validation and test windows
+ULB,N,fixed,IsolationForest,{},0.020194630070487427,0.03689637579882185,full validation and test windows
+ULB,N,fixed,LOF,{},0.6307070718943899,0.603157863943587,full validation and test windows
+ULB,N,fixed,OneClassSVM,{},0.06603508869510866,0.12476017332147252,full validation and test windows
+ULB,N,fixed,DBSCAN,{},0.013170337643240004,0.025021498387405985,full validation and test windows
+ULB,N,fixed,KMeans,{},0.03020497097986673,0.06734823561570871,full validation and test windows
+ULB,N,fixed,Ensemble,members at the fixed configuration,0.06705540442366467,0.13996640831520835,full validation and test windows
+ULB,N,fixed,Ensemble4,members at the fixed configuration,0.08609299101793777,0.16264664521469488,full validation and test windows
+ULB,N,selected,IsolationForest,"{""n_estimators"": 400}",0.02302781745962557,0.04010507096677128,full validation and test windows
+ULB,N,selected,LOF,"{""n_neighbors"": 20}",0.6307070718943899,0.603157863943587,full validation and test windows
+ULB,N,selected,OneClassSVM,"{""gamma"": ""scale""}",0.06603508869510866,0.12476017332147252,full validation and test windows
+ULB,N,selected,DBSCAN,"{""eps_scale"": 4.0}",0.015052522598230823,0.029033961197895107,full validation and test windows
+ULB,N,selected,KMeans,"{""k"": 32}",0.04851047832474039,0.10209047860211751,full validation and test windows
+ULB,N,selected,Ensemble,members at the selected configuration,0.07316629936102731,0.14613263427589746,full validation and test windows
+ULB,N,selected,Ensemble4,members at the selected configuration,0.09601225864671423,0.1672064038302332,full validation and test windows
