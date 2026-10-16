@@ -1,0 +1,47 @@
+{
+  "environment": {
+    "python": "3.11.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "sklearn": "1.5.0",
+    "scipy": "1.13.1"
+  },
+  "r1_manifest": {
+    "created": "2026-09-12T13:06:08.705139",
+    "python": "3.11.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "sklearn": "1.5.0",
+    "scipy": "1.13.1",
+    "seed": 42,
+    "rho_grid": [
+      0.001,
+      0.005,
+      0.01,
+      0.02
+    ],
+    "rho_default": 0.005,
+    "subsample_rule": "random",
+    "caps": {
+      "lof": 20000,
+      "ocsvm": 20000,
+      "dbscan": 20000
+    }
+  },
+  "checks": {
+    "ULB": {
+      "rows_compared": 90,
+      "rows_expected": 90,
+      "max_abs_diff": 0.0,
+      "reproduced": true,
+      "max_abs_score_diff": 1.1444091796875e-05
+    },
+    "PaySim": {
+      "rows_compared": 90,
+      "rows_expected": 90,
+      "max_abs_diff": 3.0976206877308954e-09,
+      "reproduced": true,
+      "max_abs_score_diff": 3.814697265625e-06
+    }
+  }
+}

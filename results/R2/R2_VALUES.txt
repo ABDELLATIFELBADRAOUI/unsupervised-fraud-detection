@@ -1,0 +1,644 @@
+R2 analyses, ARRAY-D-26-04414R1 -- written 2026-10-14T13:14:42.777043
+output folder: C:\Users\LENOVO\Desktop\Unsupervised and Semi-Supervised Anomaly Detection for Credit Card Fraud\2_Revision_R2\resultats_R2
+
+== Reproduction of the R1 headline run ==
+{
+  "environment": {
+    "python": "3.11.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "sklearn": "1.5.0",
+    "scipy": "1.13.1"
+  },
+  "r1_manifest": {
+    "created": "2026-09-12T13:06:08.705139",
+    "python": "3.11.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "sklearn": "1.5.0",
+    "scipy": "1.13.1",
+    "seed": 42,
+    "rho_grid": [
+      0.001,
+      0.005,
+      0.01,
+      0.02
+    ],
+    "rho_default": 0.005,
+    "subsample_rule": "random",
+    "caps": {
+      "lof": 20000,
+      "ocsvm": 20000,
+      "dbscan": 20000
+    }
+  },
+  "checks": {
+    "ULB": {
+      "rows_compared": 90,
+      "rows_expected": 90,
+      "max_abs_diff": 0.0,
+      "reproduced": true,
+      "max_abs_score_diff": 1.1444091796875e-05
+    },
+    "PaySim": {
+      "rows_compared": 90,
+      "rows_expected": 90,
+      "max_abs_diff": 3.0976206877308954e-09,
+      "reproduced": true,
+      "max_abs_score_diff": 3.814697265625e-06
+    }
+  }
+}
+
+== Units completed ==
+PaySim_matched_nostep_draw0, PaySim_matched_nostep_draw1, PaySim_matched_nostep_draw2, PaySim_noboth, PaySim_noresid, PaySim_nostep, PaySim_random_nostep, PaySim_rolling_nostep_fold0, PaySim_rolling_nostep_fold1, PaySim_rolling_nostep_fold2, PaySim_rolling_nostep_fold3, PaySim_rolling_nostep_fold4, draws_PaySim_ref_N, draws_PaySim_ref_U, draws_ULB_ref_N, draws_ULB_ref_U, headline_PaySim, headline_ULB, tuned_ensemble_PaySim, tuned_ensemble_PaySim_v2, tuned_ensemble_ULB
+
+== A1_aggregation_schemes_5_and_4.csv ==
+dataset regime                 members  ecdf_mean     z_mean  ap_weighted   ecdf_max  stacking_SUPERVISED
+    ULB      U            five members  0.0695127  0.0829297    0.0723917  0.0796107            0.0430315
+    ULB      U four members, no DBSCAN  0.0749132   0.111275    0.0749984  0.0846949            0.0752617
+    ULB      N            five members   0.139966   0.191614      0.34396   0.406753            0.0652535
+    ULB      N four members, no DBSCAN   0.162647   0.266081     0.389596   0.427979             0.122047
+ PaySim      U            five members   0.150185  0.0088595    0.0899564 0.00428652             0.086213
+ PaySim      U four members, no DBSCAN  0.0797932 0.00846623     0.120777 0.00428813            0.0965625
+ PaySim      N            five members   0.170587 0.00849573     0.110595 0.00416424             0.152026
+ PaySim      N four members, no DBSCAN  0.0873807 0.00815709     0.151851 0.00416459             0.147965
+
+== A1_alert_budget_ceil.csv ==
+dataset regime        detector         rho  n_test  budget_ceil  alerts     ratio
+    ULB      U IsolationForest       0.005   56962          285     168  0.589474
+    ULB      U             LOF       0.005   56962          285     626   2.19649
+    ULB      U     OneClassSVM       0.005   56962          285     198  0.694737
+    ULB      U          DBSCAN       0.005   56962          285     175  0.614035
+    ULB      U          KMeans       0.005   56962          285     198  0.694737
+    ULB      U        Ensemble       0.005   56962          285     188  0.659649
+    ULB      N IsolationForest       0.005   56962          285     184  0.645614
+    ULB      N             LOF       0.005   56962          285     633   2.22105
+    ULB      N     OneClassSVM       0.005   56962          285     196  0.687719
+    ULB      N          DBSCAN       0.005   56962          285     179   0.62807
+    ULB      N          KMeans       0.005   56962          285     179   0.62807
+    ULB      N        Ensemble       0.005   56962          285     193  0.677193
+    ULB      O IsolationForest  0.00210669   56962          121      83   0.68595
+    ULB      O             LOF  0.00210669   56962          121     215   1.77686
+    ULB      O     OneClassSVM  0.00210669   56962          121      89  0.735537
+    ULB      O          DBSCAN  0.00210669   56962          121      75  0.619835
+    ULB      O          KMeans  0.00210669   56962          121      75  0.619835
+    ULB      O        Ensemble  0.00210669   56962          121      73  0.603306
+    ULB      U       Ensemble4       0.005   56962          285     207  0.726316
+    ULB      N       Ensemble4       0.005   56962          285     192  0.673684
+    ULB      O       Ensemble4  0.00210669   56962          121      75  0.619835
+ PaySim      U IsolationForest       0.005 1272524         6363     857  0.134685
+ PaySim      U             LOF       0.005 1272524         6363  358002   56.2631
+ PaySim      U     OneClassSVM       0.005 1272524         6363    1464   0.23008
+ PaySim      U          DBSCAN       0.005 1272524         6363    1060  0.166588
+ PaySim      U          KMeans       0.005 1272524         6363    1244  0.195505
+ PaySim      U        Ensemble       0.005 1272524         6363     965  0.151658
+ PaySim      N IsolationForest       0.005 1272524         6363    1003   0.15763
+ PaySim      N             LOF       0.005 1272524         6363  374177   58.8051
+ PaySim      N     OneClassSVM       0.005 1272524         6363    1443   0.22678
+ PaySim      N          DBSCAN       0.005 1272524         6363    1060  0.166588
+ PaySim      N          KMeans       0.005 1272524         6363    1105   0.17366
+ PaySim      N        Ensemble       0.005 1272524         6363    1322  0.207764
+ PaySim      O IsolationForest 0.000835872 1272524         1064      43 0.0404135
+ PaySim      O             LOF 0.000835872 1272524         1064  343558   322.893
+ PaySim      O     OneClassSVM 0.000835872 1272524         1064     930   0.87406
+ PaySim      O          DBSCAN 0.000835872 1272524         1064      80  0.075188
+ PaySim      O          KMeans 0.000835872 1272524         1064     147  0.138158
+ PaySim      O        Ensemble 0.000835872 1272524         1064      72 0.0676692
+ PaySim      U       Ensemble4       0.005 1272524         6363    3745  0.588559
+ PaySim      N       Ensemble4       0.005 1272524         6363    5701  0.895961
+ PaySim      O       Ensemble4 0.000835872 1272524         1064      81 0.0761278
+
+== A1_ensembles_5_and_4_members.csv ==
+dataset regime  detector         rho    PR_AUC  ROC_AUC  Precision      Recall         F1      TN   FP   FN  TP  n_alerts  alert_rate  prevalence    lift
+    ULB      U  Ensemble       0.005 0.0695127 0.958524   0.111702        0.28   0.159696   56720  167   54  21       188  0.00330045  0.00131667  84.837
+    ULB      U Ensemble4       0.005 0.0749132 0.957481   0.115942        0.32   0.170213   56704  183   51  24       207    0.003634  0.00131667 88.0572
+    ULB      N  Ensemble       0.005  0.139966 0.963882   0.217617        0.56   0.313433   56736  151   33  42       193  0.00338822  0.00131667 165.278
+    ULB      N Ensemble4       0.005  0.162647 0.963784   0.239583    0.613333   0.344569   56741  146   29  46       192  0.00337067  0.00131667 181.962
+    ULB      O  Ensemble  0.00210669 0.0694921 0.958509          0           0          0   56814   73   75   0        73  0.00128156  0.00131667       0
+    ULB      O Ensemble4  0.00210669 0.0748885 0.957465       0.04        0.04       0.04   56815   72   72   3        75  0.00131667  0.00131667 30.3797
+ PaySim      U  Ensemble       0.005  0.150185 0.917784   0.245596   0.0557123   0.090822 1267542  728 4017 237       965 0.000758335  0.00334296 73.4665
+ PaySim      U Ensemble4       0.005 0.0797932 0.905464  0.0966622   0.0850964  0.0905113 1264887 3383 3892 362      3745  0.00294297  0.00334296 28.9151
+ PaySim      N  Ensemble       0.005  0.170587 0.916256   0.314675   0.0977903   0.149211 1267364  906 3838 416      1322  0.00103888  0.00334296 94.1305
+ PaySim      N Ensemble4       0.005 0.0873807 0.905262   0.143308    0.192055   0.164139 1263386 4884 3437 817      5701  0.00448007  0.00334296 42.8686
+ PaySim      O  Ensemble 0.000835872  0.150214 0.917774  0.0416667 0.000705219 0.00138696 1268201   69 4251   3        72 5.65805e-05  0.00334296  12.464
+ PaySim      O Ensemble4 0.000835872 0.0796061 0.905418   0.037037 0.000705219 0.00138408 1268192   78 4251   3        81  6.3653e-05  0.00334296 11.0791
+
+== A2_bootstrap_intervals.csv ==
+dataset                        inputs            unit regime        detector     PR_AUC      ci_lo      ci_hi   ci_width
+    ULB Time and all inputs (Table 4)    headline_ULB      U IsolationForest  0.0545628  0.0313906  0.0909511  0.0595604
+    ULB Time and all inputs (Table 4)    headline_ULB      U             LOF  0.0762794  0.0300611   0.159356   0.129294
+    ULB Time and all inputs (Table 4)    headline_ULB      U     OneClassSVM  0.0838611   0.051717   0.130352  0.0786346
+    ULB Time and all inputs (Table 4)    headline_ULB      U          DBSCAN  0.0247251  0.0159953  0.0374876  0.0214923
+    ULB Time and all inputs (Table 4)    headline_ULB      U          KMeans   0.067886  0.0418173   0.104304   0.062487
+    ULB Time and all inputs (Table 4)    headline_ULB      U        Ensemble  0.0695127  0.0432613   0.106782  0.0635209
+    ULB Time and all inputs (Table 4)    headline_ULB      U       Ensemble4  0.0749132  0.0447892   0.118517  0.0737281
+    ULB Time and all inputs (Table 4)    headline_ULB      N IsolationForest  0.0368964  0.0220818  0.0606969  0.0386151
+    ULB Time and all inputs (Table 4)    headline_ULB      N             LOF   0.603158   0.445804   0.751209   0.305405
+    ULB Time and all inputs (Table 4)    headline_ULB      N     OneClassSVM    0.12476  0.0808548   0.183656   0.102801
+    ULB Time and all inputs (Table 4)    headline_ULB      N          DBSCAN  0.0250215  0.0162561  0.0377924  0.0215364
+    ULB Time and all inputs (Table 4)    headline_ULB      N          KMeans  0.0673482  0.0408653   0.106237  0.0653718
+    ULB Time and all inputs (Table 4)    headline_ULB      N        Ensemble   0.139966  0.0882936   0.211156   0.122862
+    ULB Time and all inputs (Table 4)    headline_ULB      N       Ensemble4   0.162647   0.103478   0.245158    0.14168
+ PaySim step and residuals (Table 12) headline_PaySim      U IsolationForest  0.0160954 0.00886488  0.0245982  0.0157334
+ PaySim step and residuals (Table 12) headline_PaySim      U             LOF 0.00307994 0.00173813 0.00452347 0.00278533
+ PaySim step and residuals (Table 12) headline_PaySim      U     OneClassSVM   0.105436  0.0535626   0.171927   0.118365
+ PaySim step and residuals (Table 12) headline_PaySim      U          DBSCAN  0.0248002  0.0127937  0.0385189  0.0257251
+ PaySim step and residuals (Table 12) headline_PaySim      U          KMeans  0.0419499  0.0217416  0.0672682  0.0455266
+ PaySim step and residuals (Table 12) headline_PaySim      U        Ensemble   0.150185  0.0922183    0.20728   0.115062
+ PaySim step and residuals (Table 12) headline_PaySim      U       Ensemble4  0.0797932  0.0481648   0.116833  0.0686682
+ PaySim step and residuals (Table 12) headline_PaySim      N IsolationForest  0.0164759 0.00905241  0.0255322  0.0164798
+ PaySim step and residuals (Table 12) headline_PaySim      N             LOF 0.00303192 0.00170638 0.00446295 0.00275657
+ PaySim step and residuals (Table 12) headline_PaySim      N     OneClassSVM   0.101769  0.0526827   0.163659   0.110977
+ PaySim step and residuals (Table 12) headline_PaySim      N          DBSCAN   0.024805  0.0127968  0.0385222  0.0257254
+ PaySim step and residuals (Table 12) headline_PaySim      N          KMeans  0.0458005  0.0236729  0.0726024  0.0489294
+ PaySim step and residuals (Table 12) headline_PaySim      N        Ensemble   0.170587   0.110113   0.226792   0.116679
+ PaySim step and residuals (Table 12) headline_PaySim      N       Ensemble4  0.0873807  0.0545665   0.124683  0.0701162
+ PaySim             residuals removed  PaySim_noresid      U IsolationForest  0.0142505  0.0078987  0.0219471  0.0140484
+ PaySim             residuals removed  PaySim_noresid      U             LOF 0.00255853 0.00141976 0.00379814 0.00237837
+ PaySim             residuals removed  PaySim_noresid      U     OneClassSVM   0.055152  0.0227885   0.107536  0.0847475
+ PaySim             residuals removed  PaySim_noresid      U          DBSCAN  0.0556343  0.0236162   0.106472  0.0828555
+ PaySim             residuals removed  PaySim_noresid      U          KMeans  0.0368514  0.0186084  0.0603442  0.0417358
+ PaySim             residuals removed  PaySim_noresid      U        Ensemble  0.0190508  0.0104231  0.0284913  0.0180683
+ PaySim             residuals removed  PaySim_noresid      U       Ensemble4  0.0180286 0.00971123  0.0269288  0.0172176
+ PaySim             residuals removed  PaySim_noresid      N IsolationForest  0.0137392 0.00761778  0.0210426  0.0134248
+ PaySim             residuals removed  PaySim_noresid      N             LOF 0.00252591 0.00140018 0.00375384 0.00235366
+ PaySim             residuals removed  PaySim_noresid      N     OneClassSVM  0.0469787  0.0187928  0.0926739  0.0738811
+ PaySim             residuals removed  PaySim_noresid      N          DBSCAN  0.0226214  0.0117829  0.0357394  0.0239565
+ PaySim             residuals removed  PaySim_noresid      N          KMeans  0.0368505  0.0186132   0.060349  0.0417358
+ PaySim             residuals removed  PaySim_noresid      N        Ensemble  0.0420273  0.0236161  0.0629903  0.0393742
+ PaySim             residuals removed  PaySim_noresid      N       Ensemble4  0.0201422  0.0107555  0.0300485   0.019293
+ PaySim                  step removed   PaySim_nostep      U IsolationForest   0.012886 0.00708234  0.0197195  0.0126372
+ PaySim                  step removed   PaySim_nostep      U             LOF   0.148251  0.0953173   0.198989   0.103671
+ PaySim                  step removed   PaySim_nostep      U     OneClassSVM  0.0848726  0.0496141   0.119949  0.0703345
+ PaySim                  step removed   PaySim_nostep      U          DBSCAN  0.0215139  0.0113922  0.0330167  0.0216245
+ PaySim                  step removed   PaySim_nostep      U          KMeans  0.0365564  0.0201679  0.0549447  0.0347768
+ PaySim                  step removed   PaySim_nostep      U        Ensemble  0.0590248  0.0335636   0.088246  0.0546824
+ PaySim                  step removed   PaySim_nostep      U       Ensemble4  0.0680113  0.0388602   0.101292  0.0624317
+ PaySim                  step removed   PaySim_nostep      N IsolationForest  0.0124241 0.00692666  0.0188828  0.0119561
+ PaySim                  step removed   PaySim_nostep      N             LOF   0.190518   0.127936   0.247532   0.119595
+ PaySim                  step removed   PaySim_nostep      N     OneClassSVM   0.104815  0.0629088   0.146633  0.0837241
+ PaySim                  step removed   PaySim_nostep      N          DBSCAN  0.0215209  0.0113964  0.0330269  0.0216305
+ PaySim                  step removed   PaySim_nostep      N          KMeans   0.038145  0.0211212  0.0569411  0.0358198
+ PaySim                  step removed   PaySim_nostep      N        Ensemble  0.0686325  0.0391497    0.10209  0.0629406
+ PaySim                  step removed   PaySim_nostep      N       Ensemble4  0.0830984  0.0479787   0.122481  0.0745022
+ PaySim    step and residuals removed   PaySim_noboth      U IsolationForest  0.0159304  0.0088139  0.0241654  0.0153515
+ PaySim    step and residuals removed   PaySim_noboth      U             LOF  0.0683978  0.0397061  0.0985041  0.0587979
+ PaySim    step and residuals removed   PaySim_noboth      U     OneClassSVM   0.050631  0.0287378  0.0737797  0.0450418
+ PaySim    step and residuals removed   PaySim_noboth      U          DBSCAN  0.0191985  0.0101241  0.0295317  0.0194076
+ PaySim    step and residuals removed   PaySim_noboth      U          KMeans  0.0310527  0.0169629  0.0468023  0.0298394
+ PaySim    step and residuals removed   PaySim_noboth      U        Ensemble  0.0515583   0.029196  0.0768357  0.0476397
+ PaySim    step and residuals removed   PaySim_noboth      U       Ensemble4  0.0588387  0.0336312  0.0872227  0.0535915
+ PaySim    step and residuals removed   PaySim_noboth      N IsolationForest  0.0150948  0.0083889  0.0229092  0.0145203
+ PaySim    step and residuals removed   PaySim_noboth      N             LOF  0.0716534    0.04197   0.102471  0.0605007
+ PaySim    step and residuals removed   PaySim_noboth      N     OneClassSVM  0.0528529  0.0302815   0.076851  0.0465695
+ PaySim    step and residuals removed   PaySim_noboth      N          DBSCAN  0.0192088  0.0101297  0.0295478   0.019418
+ PaySim    step and residuals removed   PaySim_noboth      N          KMeans  0.0310765  0.0169763  0.0468442  0.0298679
+ PaySim    step and residuals removed   PaySim_noboth      N        Ensemble  0.0505862  0.0286072  0.0754264  0.0468192
+ PaySim    step and residuals removed   PaySim_noboth      N       Ensemble4  0.0589691  0.0337008  0.0878134  0.0541126
+
+== A2_paired_ensemble_vs_members.csv ==
+dataset regime  ensemble           rival  is_best_single  PR_AUC_ensemble  PR_AUC_rival        diff  P_a_ahead       ci_lo      ci_hi    p_boot    B  p_holm_within_ensemble  p_holm_all verdict_unadjusted    verdict_holm
+    ULB      U  Ensemble IsolationForest           False        0.0695127     0.0545628   0.0152231     0.8425  -0.0197373  0.0466333  0.315842 2000                       1           1       within noise    not resolved
+    ULB      U  Ensemble             LOF           False        0.0695127     0.0762794  -0.0125257      0.354  -0.0757177  0.0336577  0.708646 2000                       1           1       within noise    not resolved
+    ULB      U  Ensemble     OneClassSVM            True        0.0695127     0.0838611  -0.0154566     0.1465  -0.0476794  0.0127438  0.293853 2000                       1           1       within noise    not resolved
+    ULB      U  Ensemble          DBSCAN           False        0.0695127     0.0247251   0.0470805          1   0.0205882  0.0775285 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+    ULB      U  Ensemble          KMeans           False        0.0695127      0.067886  0.00174915     0.5575  -0.0328246  0.0338861  0.885557 2000                       1           1       within noise    not resolved
+    ULB      U Ensemble4 IsolationForest           False        0.0749132     0.0545628   0.0210565     0.8685  -0.0201652  0.0601805  0.263868 2000                       1           1       within noise    not resolved
+    ULB      U Ensemble4             LOF           False        0.0749132     0.0762794 -0.00669229      0.428  -0.0663682  0.0371985  0.856572 2000                       1           1       within noise    not resolved
+    ULB      U Ensemble4     OneClassSVM            True        0.0749132     0.0838611 -0.00962323      0.306  -0.0467342   0.025797  0.612694 2000                       1           1       within noise    not resolved
+    ULB      U Ensemble4          DBSCAN           False        0.0749132     0.0247251   0.0529139          1   0.0208614  0.0897398 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+    ULB      U Ensemble4          KMeans           False        0.0749132      0.067886  0.00758257      0.654  -0.0327934  0.0467681  0.692654 2000                       1           1       within noise    not resolved
+    ULB      N  Ensemble IsolationForest           False         0.139966     0.0368964     0.10677          1   0.0656684   0.155312 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+    ULB      N  Ensemble             LOF            True         0.139966      0.603158   -0.464663          0   -0.581285  -0.340737 0.0009995 2000                 0.01999     0.03998    ensemble behind ensemble behind
+    ULB      N  Ensemble     OneClassSVM           False         0.139966       0.12476   0.0162566     0.9495 -0.00273964  0.0390751  0.101949 2000                0.509745           1       within noise    not resolved
+    ULB      N  Ensemble          DBSCAN           False         0.139966     0.0250215     0.11977          1   0.0721482   0.176233 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+    ULB      N  Ensemble          KMeans           False         0.139966     0.0673482   0.0750037          1   0.0441382   0.112878 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+    ULB      N Ensemble4 IsolationForest           False         0.162647     0.0368964    0.129978          1   0.0798799    0.18858 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+    ULB      N Ensemble4             LOF            True         0.162647      0.603158   -0.441455          0   -0.556219  -0.324818 0.0009995 2000                 0.01999     0.03998    ensemble behind ensemble behind
+    ULB      N Ensemble4     OneClassSVM           False         0.162647       0.12476   0.0394646          1   0.0152817  0.0713688 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+    ULB      N Ensemble4          DBSCAN           False         0.162647     0.0250215    0.142978          1   0.0864843   0.210064 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+    ULB      N Ensemble4          KMeans           False         0.162647     0.0673482   0.0982117          1   0.0583642   0.146515 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      U  Ensemble IsolationForest           False         0.150185     0.0160954    0.133577          1    0.082124   0.183836 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      U  Ensemble             LOF           False         0.150185    0.00307994    0.146752          1   0.0901308   0.203291 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      U  Ensemble     OneClassSVM            True         0.150185      0.105436   0.0425815      0.998   0.0156665   0.064752 0.0049975 2000                0.029985     0.05997     ensemble ahead  ensemble ahead
+ PaySim      U  Ensemble          DBSCAN           False         0.150185     0.0248002      0.1249          1   0.0779605   0.169698 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      U  Ensemble          KMeans           False         0.150185     0.0419499      0.1072          1   0.0691023     0.1413 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      U Ensemble4 IsolationForest           False        0.0797932     0.0160954   0.0638959          1   0.0372181  0.0963595 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      U Ensemble4             LOF           False        0.0797932    0.00307994   0.0770711          1    0.046074   0.112976 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      U Ensemble4     OneClassSVM            True        0.0797932      0.105436  -0.0270992      0.046  -0.0709189 0.00318005 0.0929535 2000                0.557721           1       within noise    not resolved
+ PaySim      U Ensemble4          DBSCAN           False        0.0797932     0.0248002   0.0552195          1   0.0326345  0.0830966 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      U Ensemble4          KMeans           False        0.0797932     0.0419499   0.0375196          1   0.0207704  0.0587588 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N  Ensemble IsolationForest           False         0.170587     0.0164759    0.153251          1    0.100104   0.201343 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N  Ensemble             LOF           False         0.170587    0.00303192    0.166997          1    0.108231   0.221968 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N  Ensemble     OneClassSVM            True         0.170587      0.101769   0.0670701          1    0.038367  0.0945146 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N  Ensemble          DBSCAN           False         0.170587      0.024805    0.145092          1   0.0958333    0.18826 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N  Ensemble          KMeans           False         0.170587     0.0458005     0.12368          1   0.0848609    0.15768 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N Ensemble4 IsolationForest           False        0.0873807     0.0164759   0.0709457          1   0.0437716   0.104003 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N Ensemble4             LOF           False        0.0873807    0.00303192   0.0846921          1   0.0525112   0.121163 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N Ensemble4     OneClassSVM            True        0.0873807      0.101769  -0.0152352     0.1795    -0.05403  0.0132681   0.35982 2000                       1           1       within noise    not resolved
+ PaySim      N Ensemble4          DBSCAN           False        0.0873807      0.024805   0.0627869          1   0.0392945  0.0919213 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+ PaySim      N Ensemble4          KMeans           False        0.0873807     0.0458005   0.0413747          1   0.0240919  0.0635192 0.0009995 2000                 0.01999     0.03998     ensemble ahead  ensemble ahead
+
+== A2_paired_paysim_ablation_claims.csv ==
+                    inputs regime           a           b  PR_AUC_a  PR_AUC_b        diff  P_a_ahead        ci_lo      ci_hi    p_boot    B   p_holm
+              step removed      U         LOF OneClassSVM  0.148251 0.0848726   0.0629437          1     0.045427  0.0798084 0.0009995 2000 0.015992
+              step removed      U         LOF    Ensemble  0.148251 0.0590248   0.0881576          1    0.0616745   0.111102 0.0009995 2000 0.015992
+              step removed      U         LOF   Ensemble4  0.148251 0.0680113   0.0791336          1    0.0559923  0.0982428 0.0009995 2000 0.015992
+              step removed      U OneClassSVM    Ensemble 0.0848726 0.0590248   0.0252138          1    0.0160173  0.0334096 0.0009995 2000 0.015992
+              step removed      N         LOF OneClassSVM  0.190518  0.104815   0.0848491          1    0.0638703   0.102292 0.0009995 2000 0.015992
+              step removed      N         LOF    Ensemble  0.190518 0.0686325    0.120279          1     0.087055   0.146163 0.0009995 2000 0.015992
+              step removed      N         LOF   Ensemble4  0.190518 0.0830984    0.105812          1    0.0781214   0.126543 0.0009995 2000 0.015992
+              step removed      N OneClassSVM    Ensemble  0.104815 0.0686325   0.0354302          1     0.023098   0.045895 0.0009995 2000 0.015992
+step and residuals removed      U         LOF OneClassSVM 0.0683978  0.050631    0.017644          1    0.0103127   0.025438 0.0009995 2000 0.015992
+step and residuals removed      U         LOF    Ensemble 0.0683978 0.0515583   0.0165858          1    0.0100834  0.0231401 0.0009995 2000 0.015992
+step and residuals removed      U         LOF   Ensemble4 0.0683978 0.0588387  0.00929892          1   0.00513351  0.0139794 0.0009995 2000 0.015992
+step and residuals removed      U OneClassSVM    Ensemble  0.050631 0.0515583 -0.00105817      0.252  -0.00415036 0.00168964  0.504748 2000 0.504748
+step and residuals removed      N         LOF OneClassSVM 0.0716534 0.0528529    0.018619          1    0.0109287  0.0268732 0.0009995 2000 0.015992
+step and residuals removed      N         LOF    Ensemble 0.0716534 0.0505862   0.0207427          1    0.0130402  0.0285373 0.0009995 2000 0.015992
+step and residuals removed      N         LOF   Ensemble4 0.0716534 0.0589691   0.0123496          1   0.00726162  0.0177165 0.0009995 2000 0.015992
+step and residuals removed      N OneClassSVM    Ensemble 0.0528529 0.0505862  0.00212365     0.9415 -0.000433443 0.00471957  0.117941 2000 0.235882
+
+== A3_five_draws_summary.csv ==
+dataset inputs regime        detector       mean          sd        min        max  n  reference_draw  reference_rank_of_n
+ PaySim    ref      N          DBSCAN  0.0559024    0.042479  0.0246724   0.108192  5        0.024805                    4
+ PaySim    ref      N        Ensemble    0.13553    0.043012  0.0843199    0.17351  5        0.170587                    2
+ PaySim    ref      N       Ensemble4  0.0919007   0.0104518  0.0811943   0.109208  5       0.0873807                    4
+ PaySim    ref      N IsolationForest  0.0164759           0  0.0164759  0.0164759  5       0.0164759                    1
+ PaySim    ref      N          KMeans  0.0458005           0  0.0458005  0.0458005  5       0.0458005                    1
+ PaySim    ref      N             LOF 0.00311287 7.51684e-05 0.00303192 0.00322554  5      0.00303192                    5
+ PaySim    ref      N     OneClassSVM   0.104544   0.0065365  0.0994173   0.114861  5        0.101769                    3
+ PaySim    ref      U          DBSCAN  0.0379505   0.0176738  0.0248002  0.0607409  5       0.0248002                    5
+ PaySim    ref      U        Ensemble    0.11484   0.0343503  0.0763025   0.150185  5        0.150185                    1
+ PaySim    ref      U       Ensemble4  0.0761109  0.00367688  0.0703258  0.0797932  5       0.0797932                    1
+ PaySim    ref      U IsolationForest  0.0160954           0  0.0160954  0.0160954  5       0.0160954                    1
+ PaySim    ref      U          KMeans  0.0419499           0  0.0419499  0.0419499  5       0.0419499                    1
+ PaySim    ref      U             LOF 0.00301501 5.13664e-05 0.00296086 0.00307994  5      0.00307994                    1
+ PaySim    ref      U     OneClassSVM  0.0664816   0.0234802  0.0475493   0.105436  5        0.105436                    1
+    ULB    ref      N          DBSCAN  0.0249422 0.000260326  0.0246042  0.0252312  5       0.0250215                    3
+    ULB    ref      N        Ensemble   0.140734  0.00524209   0.136275   0.149645  5        0.139966                    3
+    ULB    ref      N       Ensemble4   0.166743    0.006025   0.161393   0.175021  5        0.162647                    4
+    ULB    ref      N IsolationForest  0.0368964           0  0.0368964  0.0368964  5       0.0368964                    1
+    ULB    ref      N          KMeans  0.0673482           0  0.0673482  0.0673482  5       0.0673482                    1
+    ULB    ref      N             LOF   0.557206   0.0329179   0.520065   0.603158  5        0.603158                    1
+    ULB    ref      N     OneClassSVM   0.132846   0.0255934   0.100043    0.17081  5         0.12476                    4
+    ULB    ref      U          DBSCAN  0.0258523  0.00185313  0.0245778  0.0290534  5       0.0247251                    4
+    ULB    ref      U        Ensemble  0.0446495   0.0186483  0.0256273  0.0695127  5       0.0695127                    1
+    ULB    ref      U       Ensemble4  0.0482018    0.019444  0.0290465  0.0749132  5       0.0749132                    1
+    ULB    ref      U IsolationForest  0.0545628           0  0.0545628  0.0545628  5       0.0545628                    1
+    ULB    ref      U          KMeans   0.067886           0   0.067886   0.067886  5        0.067886                    1
+    ULB    ref      U             LOF  0.0487701   0.0233579  0.0148942  0.0762794  5       0.0762794                    1
+    ULB    ref      U     OneClassSVM  0.0645833    0.013083  0.0541381  0.0838611  5       0.0838611                    1
+
+== A4_ensemble_at_selected_configurations.csv ==
+dataset regime  setting        detector                                config  val_PR_AUC  test_PR_AUC                                       window
+    ULB      U    fixed IsolationForest                                    {}   0.0270567    0.0545628             full validation and test windows
+    ULB      U    fixed             LOF                                    {}    0.101023    0.0762794             full validation and test windows
+    ULB      U    fixed     OneClassSVM                                    {}   0.0379077    0.0838611             full validation and test windows
+    ULB      U    fixed          DBSCAN                                    {}   0.0130194    0.0247251             full validation and test windows
+    ULB      U    fixed          KMeans                                    {}   0.0347344     0.067886             full validation and test windows
+    ULB      U    fixed        Ensemble    members at the fixed configuration    0.039687    0.0695127             full validation and test windows
+    ULB      U    fixed       Ensemble4    members at the fixed configuration   0.0471496    0.0749132             full validation and test windows
+    ULB      U selected IsolationForest                 {"n_estimators": 100}   0.0271941    0.0517966             full validation and test windows
+    ULB      U selected             LOF                   {"n_neighbors": 50}    0.196859       0.3175             full validation and test windows
+    ULB      U selected     OneClassSVM                    {"gamma": "scale"}   0.0379077    0.0838611             full validation and test windows
+    ULB      U selected          DBSCAN                    {"min_samples": 5}   0.0320952    0.0791323             full validation and test windows
+    ULB      U selected          KMeans                             {"k": 16}   0.0354935    0.0794154             full validation and test windows
+    ULB      U selected        Ensemble members at the selected configuration   0.0524886     0.120957             full validation and test windows
+    ULB      U selected       Ensemble4 members at the selected configuration   0.0565644      0.12761             full validation and test windows
+    ULB      N    fixed IsolationForest                                    {}   0.0201946    0.0368964             full validation and test windows
+    ULB      N    fixed             LOF                                    {}    0.630707     0.603158             full validation and test windows
+    ULB      N    fixed     OneClassSVM                                    {}   0.0660351      0.12476             full validation and test windows
+    ULB      N    fixed          DBSCAN                                    {}   0.0131703    0.0250215             full validation and test windows
+    ULB      N    fixed          KMeans                                    {}    0.030205    0.0673482             full validation and test windows
+    ULB      N    fixed        Ensemble    members at the fixed configuration   0.0670554     0.139966             full validation and test windows
+    ULB      N    fixed       Ensemble4    members at the fixed configuration    0.086093     0.162647             full validation and test windows
+    ULB      N selected IsolationForest                 {"n_estimators": 400}   0.0230278    0.0401051             full validation and test windows
+    ULB      N selected             LOF                   {"n_neighbors": 20}    0.630707     0.603158             full validation and test windows
+    ULB      N selected     OneClassSVM                    {"gamma": "scale"}   0.0660351      0.12476             full validation and test windows
+    ULB      N selected          DBSCAN                    {"eps_scale": 4.0}   0.0150525     0.029034             full validation and test windows
+    ULB      N selected          KMeans                             {"k": 32}   0.0485105      0.10209             full validation and test windows
+    ULB      N selected        Ensemble members at the selected configuration   0.0731663     0.146133             full validation and test windows
+    ULB      N selected       Ensemble4 members at the selected configuration   0.0960123     0.167206             full validation and test windows
+ PaySim      U    fixed IsolationForest                                    {}  0.00220274    0.0643937 most recent 200,000 validation and test rows
+ PaySim      U    fixed             LOF                                    {} 0.000449701   0.00759498 most recent 200,000 validation and test rows
+ PaySim      U    fixed     OneClassSVM                                    {}   0.0217105     0.243652 most recent 200,000 validation and test rows
+ PaySim      U    fixed          DBSCAN                                    {}  0.00424539    0.0664642 most recent 200,000 validation and test rows
+ PaySim      U    fixed          KMeans                                    {}  0.00666351     0.112148 most recent 200,000 validation and test rows
+ PaySim      U    fixed        Ensemble    members at the fixed configuration    0.027308      0.24261 most recent 200,000 validation and test rows
+ PaySim      U    fixed       Ensemble4    members at the fixed configuration   0.0399407     0.114224 most recent 200,000 validation and test rows
+ PaySim      U selected IsolationForest                 {"n_estimators": 200}  0.00220274    0.0643937 most recent 200,000 validation and test rows
+ PaySim      U selected             LOF                    {"n_neighbors": 5} 0.000362312   0.00685855 most recent 200,000 validation and test rows
+ PaySim      U selected     OneClassSVM                        {"gamma": 0.1}   0.0234687     0.246461 most recent 200,000 validation and test rows
+ PaySim      U selected          DBSCAN                    {"eps_scale": 0.5}   0.0192071     0.221949 most recent 200,000 validation and test rows
+ PaySim      U selected          KMeans                             {"k": 32}   0.0112931     0.143761 most recent 200,000 validation and test rows
+ PaySim      U selected        Ensemble members at the selected configuration   0.0334189     0.068184 most recent 200,000 validation and test rows
+ PaySim      U selected       Ensemble4 members at the selected configuration   0.0341934    0.0669286 most recent 200,000 validation and test rows
+ PaySim      N    fixed IsolationForest                                    {}  0.00213481     0.068668 most recent 200,000 validation and test rows
+ PaySim      N    fixed             LOF                                    {} 0.000433766   0.00751224 most recent 200,000 validation and test rows
+ PaySim      N    fixed     OneClassSVM                                    {}   0.0223388     0.218457 most recent 200,000 validation and test rows
+ PaySim      N    fixed          DBSCAN                                    {}  0.00424562    0.0664753 most recent 200,000 validation and test rows
+ PaySim      N    fixed          KMeans                                    {}  0.00684619     0.112933 most recent 200,000 validation and test rows
+ PaySim      N    fixed        Ensemble    members at the fixed configuration   0.0381723     0.240329 most recent 200,000 validation and test rows
+ PaySim      N    fixed       Ensemble4    members at the fixed configuration   0.0526508      0.11089 most recent 200,000 validation and test rows
+ PaySim      N selected IsolationForest                 {"n_estimators": 200}  0.00213481     0.068668 most recent 200,000 validation and test rows
+ PaySim      N selected             LOF                    {"n_neighbors": 5} 0.000368815   0.00679332 most recent 200,000 validation and test rows
+ PaySim      N selected     OneClassSVM                        {"gamma": 0.1}   0.0225898     0.216357 most recent 200,000 validation and test rows
+ PaySim      N selected          DBSCAN                   {"min_samples": 25}   0.0191455     0.216871 most recent 200,000 validation and test rows
+ PaySim      N selected          KMeans                             {"k": 32}   0.0114081     0.137768 most recent 200,000 validation and test rows
+ PaySim      N selected        Ensemble members at the selected configuration   0.0777832    0.0708132 most recent 200,000 validation and test rows
+ PaySim      N selected       Ensemble4 members at the selected configuration   0.0829461    0.0694792 most recent 200,000 validation and test rows
+
+== A5_rolling_nostep_per_origin.csv ==
+ fold regime        detector     PR_AUC  prevalence    lift  n_test  n_pos_test
+    0      U IsolationForest  0.0015895 0.000554018 2.86905  509009         282
+    0      U             LOF 0.00652497 0.000554018 11.7776  509009         282
+    0      U     OneClassSVM 0.00410922 0.000554018 7.41712  509009         282
+    0      U          DBSCAN 0.00161978 0.000554018  2.9237  509009         282
+    0      U          KMeans 0.00276066 0.000554018 4.98298  509009         282
+    0      U        Ensemble 0.00511822 0.000554018 9.23836  509009         282
+    0      N IsolationForest 0.00160197 0.000554018 2.89155  509009         282
+    0      N             LOF 0.00667998 0.000554018 12.0573  509009         282
+    0      N     OneClassSVM 0.00473636 0.000554018 8.54911  509009         282
+    0      N          DBSCAN 0.00161945 0.000554018  2.9231  509009         282
+    0      N          KMeans 0.00276206 0.000554018 4.98551  509009         282
+    0      N        Ensemble 0.00545083 0.000554018 9.83873  509009         282
+    1      U IsolationForest 0.00203539 0.000762266 2.67019  509009         388
+    1      U             LOF   0.010921 0.000762266  14.327  509009         388
+    1      U     OneClassSVM 0.00330188 0.000762266 4.33167  509009         388
+    1      U          DBSCAN 0.00495877 0.000762266  6.5053  509009         388
+    1      U          KMeans 0.00353411 0.000762266 4.63632  509009         388
+    1      U        Ensemble 0.00628976 0.000762266  8.2514  509009         388
+    1      N IsolationForest 0.00200199 0.000762266 2.62636  509009         388
+    1      N             LOF  0.0123895 0.000762266 16.2535  509009         388
+    1      N     OneClassSVM 0.00757169 0.000762266 9.93314  509009         388
+    1      N          DBSCAN 0.00208812 0.000762266 2.73936  509009         388
+    1      N          KMeans 0.00354648 0.000762266 4.65256  509009         388
+    1      N        Ensemble 0.00798943 0.000762266 10.4812  509009         388
+    2      U IsolationForest 0.00232314 0.000628673 3.69532  509009         320
+    2      U             LOF  0.0750009 0.000628673   119.3  509009         320
+    2      U     OneClassSVM  0.0184422 0.000628673 29.3351  509009         320
+    2      U          DBSCAN 0.00259654 0.000628673 4.13019  509009         320
+    2      U          KMeans  0.0050621 0.000628673 8.05205  509009         320
+    2      U        Ensemble  0.0115895 0.000628673 18.4348  509009         320
+    2      N IsolationForest 0.00211887 0.000628673 3.37039  509009         320
+    2      N             LOF  0.0794093 0.000628673 126.313  509009         320
+    2      N     OneClassSVM  0.0238786 0.000628673 37.9826  509009         320
+    2      N          DBSCAN 0.00259729 0.000628673 4.13138  509009         320
+    2      N          KMeans 0.00507456 0.000628673 8.07187  509009         320
+    2      N        Ensemble  0.0125408 0.000628673 19.9481  509009         320
+    3      U IsolationForest 0.00286129 0.000628673 4.55132  509009         320
+    3      U             LOF   0.127779 0.000628673 203.251  509009         320
+    3      U     OneClassSVM  0.0306094 0.000628673  48.689  509009         320
+    3      U          DBSCAN 0.00381569 0.000628673 6.06945  509009         320
+    3      U          KMeans 0.00811699 0.000628673 12.9113  509009         320
+    3      U        Ensemble  0.0203582 0.000628673 32.3828  509009         320
+    3      N IsolationForest 0.00295059 0.000628673 4.69336  509009         320
+    3      N             LOF   0.168105 0.000628673 267.396  509009         320
+    3      N     OneClassSVM  0.0524796 0.000628673 83.4769  509009         320
+    3      N          DBSCAN  0.0539329 0.000628673 85.7886  509009         320
+    3      N          KMeans 0.00813437 0.000628673  12.939  509009         320
+    3      N        Ensemble  0.0360253 0.000628673 57.3038  509009         320
+    4      U IsolationForest  0.0386151   0.0072926 5.29511  509009        3712
+    4      U             LOF   0.347989   0.0072926  47.718  509009        3712
+    4      U     OneClassSVM   0.175665   0.0072926 24.0882  509009        3712
+    4      U          DBSCAN   0.034103   0.0072926 4.67638  509009        3712
+    4      U          KMeans  0.0687605   0.0072926  9.4288  509009        3712
+    4      U        Ensemble   0.183357   0.0072926 25.1428  509009        3712
+    4      N IsolationForest   0.032272   0.0072926  4.4253  509009        3712
+    4      N             LOF   0.419752   0.0072926 57.5587  509009        3712
+    4      N     OneClassSVM   0.264703   0.0072926 36.2975  509009        3712
+    4      N          DBSCAN  0.0341553   0.0072926 4.68356  509009        3712
+    4      N          KMeans  0.0689633   0.0072926 9.45662  509009        3712
+    4      N        Ensemble   0.201882   0.0072926 27.6831  509009        3712
+
+== A5_rolling_nostep_summary.csv ==
+regime        detector  mean_PR_AUC        SD        min       max  mean_lift  origins      CV
+     N          DBSCAN    0.0188786  0.024016 0.00161945 0.0539329    20.0532        5 1.27212
+     N        Ensemble    0.0527777 0.0842282 0.00545083  0.201882     25.051        5 1.59591
+     N IsolationForest   0.00818908 0.0134717 0.00160197  0.032272    3.60139        5 1.64508
+     N          KMeans    0.0176962 0.0287328 0.00276206 0.0689633     8.0211        5 1.62367
+     N             LOF     0.137267  0.170839 0.00667998  0.419752    95.9157        5 1.24457
+     N     OneClassSVM     0.070674  0.110111 0.00473636  0.264703    35.2479        5 1.55802
+     U          DBSCAN   0.00941875 0.0138561 0.00161978  0.034103      4.861        5 1.47112
+     U        Ensemble    0.0453425 0.0773862 0.00511822  0.183357      18.69        5 1.70671
+     U IsolationForest   0.00948489 0.0162908  0.0015895 0.0386151     3.8162        5 1.71756
+     U          KMeans    0.0176469 0.0286468 0.00276066 0.0687605    8.00229        5 1.62334
+     U             LOF     0.113643  0.140211 0.00652497  0.347989    79.2749        5 1.23379
+     U     OneClassSVM    0.0464256 0.0731205 0.00330188  0.175665    22.7722        5   1.575
+
+== A5_split_decomposition_nostep.csv ==
+regime        detector  chronological     random  random_matched  matched_min  matched_max   gap_total  gap_prevalence  gap_temporal
+     N          DBSCAN      0.0215209 0.00580556       0.0143301     0.013889    0.0149513  -0.0157153     -0.00852451    -0.0071908
+     N        Ensemble      0.0686325  0.0487761       0.0954829    0.0902333     0.103625  -0.0198563      -0.0467068     0.0268505
+     N IsolationForest      0.0124241 0.00496311       0.0135115     0.013225    0.0138025 -0.00746101     -0.00854834    0.00108734
+     N          KMeans       0.038145  0.0135698       0.0320694    0.0312896    0.0331681  -0.0245752      -0.0184996   -0.00607559
+     N             LOF       0.190518   0.146008        0.205536      0.17079     0.231651    -0.04451      -0.0595286     0.0150186
+     N     OneClassSVM       0.104815  0.0752188        0.131405     0.127284     0.138333  -0.0295958      -0.0561865     0.0265908
+     U          DBSCAN      0.0215139 0.00580253       0.0143355    0.0139057     0.014945  -0.0157114     -0.00853298   -0.00717844
+     U        Ensemble      0.0590248  0.0378605       0.0797243     0.072544    0.0890419  -0.0211643      -0.0418637     0.0206994
+     U IsolationForest       0.012886 0.00543382       0.0137123    0.0134577    0.0140148 -0.00745219     -0.00827852   0.000826334
+     U          KMeans      0.0365564  0.0135041       0.0319705    0.0311976    0.0330674  -0.0230523      -0.0184664   -0.00458599
+     U             LOF       0.148251  0.0713668          0.1646     0.108028     0.206595  -0.0768841      -0.0932333     0.0163493
+     U     OneClassSVM      0.0848726   0.035646       0.0525016    0.0346992    0.0826113  -0.0492267      -0.0168557     -0.032371
+
+== A6_meta_by_budget.csv ==
+ budget  valid_draws  collapse_rate  collapse_rate_penalty_held  median_PR_AUC_penalty_held  median_PR_AUC_not_collapsed  median_cosine_to_full_fit  median_coef_IsolationForest  median_coef_LOF  median_coef_OneClassSVM  median_coef_DBSCAN  median_coef_KMeans
+    500            4           0.25                        0.25                    0.160292                     0.158289                   0.335324                      2.22923          4.68369                  3.35524             2.76517              2.6062
+   1000            4              0                           0                      0.1635                     0.175641                    0.48512                      3.05095          5.76069                  3.66104             1.17773             3.82908
+   2500           15       0.133333                    0.133333                     0.16183                     0.163953                   0.359759                      3.70544            8.388                  5.69968             4.43242             4.58385
+   5000           20           0.15                        0.15                    0.164568                     0.166184                   0.379746                      3.77149          11.0768                  6.89849             5.37852             5.73648
+  10000           20            0.3                        0.25                    0.163683                     0.182739                   0.715517                      2.77726          9.93299                  3.28623           -0.551312             9.13906
+  25000           20           0.45                           0                    0.189436                     0.190607                    0.98932                     -4.08768          4.02779                  2.69751            -6.61811             19.3315
+  56961            1              0                           0                    0.241418                    0.0652535                          1                     -3.72027          3.64046                  2.24006            -4.92218              14.735
+
+== A6_meta_by_collapse_status.csv ==
+ collapsed  coef_IsolationForest  coef_LOF  coef_OneClassSVM  coef_DBSCAN  coef_KMeans  intercept  cosine_to_full_validation_fit
+         0               2.57188   8.94173           4.85696      2.29664      7.62841   -23.1117                       0.525302
+         1              -5.20288   4.14747           2.44577     -7.39369      17.7945   -9.85564                       0.964495
+
+== A6_meta_draws.csv ==
+ budget  seed  n_frauds  valid  PR_AUC_as_run  coef_IsolationForest  coef_LOF  coef_OneClassSVM  coef_DBSCAN  coef_KMeans  intercept  cosine_to_full_validation_fit  PR_AUC_penalty_held  collapsed  collapsed_penalty_held
+    500     0         2      1        0.16382               1.83505    5.1891           3.50386      3.05725      2.66557   -13.6577                       0.347448             0.169687          0                       0
+    500     1         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500     2         2      1       0.158289               2.62341   4.68186            3.3886      2.68763      2.55453   -13.5076                         0.3232             0.162223          0                       0
+    500     3         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500     4         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500     5         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500     6         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500     7         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500     8         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500     9         2      1     0.00154396              -1.10604   3.01711          -1.46316     -1.74251      2.63777  -0.929422                       0.756201           0.00141771          1                       1
+    500    10         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500    11         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500    12         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500    13         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500    14         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500    15         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500    16         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500    17         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+    500    18         2      1       0.156705               2.75315   4.68552           3.32188      2.84271      2.57464   -13.6854                       0.310707             0.158361          0                       0
+    500    19         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     0         2      1        0.18994               2.86739   5.20362           2.98412    -0.810924      4.42007   -11.3926                       0.633601             0.193386          0                       0
+   1000     1         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     2         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     3         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     4         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     5         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     6         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     7         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     8         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000     9         2      1       0.160693               3.02685     6.043           4.15487      3.35741      3.23809   -17.1504                       0.336639             0.162685          0                       0
+   1000    10         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000    11         2      1       0.196295               3.07505   5.47837           3.16722     -1.78204      4.45005   -11.2404                       0.638867              0.15139          0                       0
+   1000    12         3      1       0.161341                3.2762   6.17255           4.20061      3.16639      3.19339   -17.3283                        0.33226             0.164316          0                       0
+   1000    13         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000    14         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000    15         0      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000    16         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000    17         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000    18         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   1000    19         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   2500     0         2      1       0.163953               3.41304   8.88187           5.94679      4.98187      4.74093   -24.9642                       0.359759             0.163953          0                       0
+   2500     1         3      1       0.167935               2.96565   8.79946           5.82129      4.40181      4.52135   -23.2993                       0.377742             0.167935          0                       0
+   2500     2         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   2500     3         3      1     0.00367766              -5.46873   6.14455           1.76082     -6.95909      12.4228   -6.32664                       0.965167           0.00367766          1                       1
+   2500     4         4      1       0.189382               2.62816   9.85697           4.68865      1.90662      5.28519   -21.1396                       0.506244             0.189382          0                       0
+   2500     5         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   2500     6         3      1       0.195085                3.8068   6.59751           3.44067     -2.04063      6.62058   -14.8156                       0.697194             0.195085          0                       0
+   2500     7         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   2500     8         4      1     0.00985419              -1.86303  0.319827           1.67242     -6.09344      12.4936   -5.03825                       0.967061           0.00985419          1                       1
+   2500     9         3      1        0.16049               4.43507   8.32787           6.05315      4.45416      4.38572   -24.5154                       0.330164              0.16049          0                       0
+   2500    10         2      1       0.158198               4.41224     8.388           5.26583      5.07811      4.27763   -24.3432                       0.304185             0.158198          0                       0
+   2500    11         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   2500    12         3      1         0.1595                4.1089   8.26977           5.71959      4.89505      4.44442   -24.3805                       0.328255               0.1595          0                       0
+   2500    13         5      1       0.165006               3.60963   8.55329           5.72795      4.30416      4.02427   -23.0218                       0.334845             0.165006          0                       0
+   2500    14         2      1       0.160482               3.98658   8.35169           5.63972      4.81445      4.46721   -24.1714                       0.335629             0.160482          0                       0
+   2500    15         2      1       0.195606               3.98869    11.343         -0.270094     0.982365      5.32017   -18.1217                       0.455829             0.195606          0                       0
+   2500    16         1      0            NaN                   NaN       NaN               NaN          NaN          NaN        NaN                            NaN                  NaN        NaN                     NaN
+   2500    17         3      1       0.158729               3.70544   8.22874           5.69968      5.38117      4.58385   -24.5425                       0.330623             0.158729          0                       0
+   2500    18         3      1        0.16183               4.11943   8.65201           5.81866       4.7535      4.41583    -24.588                       0.330889              0.16183          0                       0
+   2500    19         2      1       0.165538               3.46171   8.69808           5.84058      4.43242       4.6208   -23.9088                       0.370396             0.165538          0                       0
+   5000     0         5      1       0.165955               4.80091   11.3761           7.54208      5.40651      5.67563    -31.406                       0.358174             0.164308          0                       0
+   5000     1         3      1       0.171064                3.2345   11.3875           7.57618      5.35052      5.73119    -29.774                        0.39268             0.169187          0                       0
+   5000     2         4      1       0.162812               5.22575   11.0854           6.97229      5.84044      5.51252   -31.2131                       0.331722             0.162876          0                       0
+   5000     3         5      1     0.00449552              -7.11593     7.421           2.16719      -7.8191      15.6062   -8.44036                       0.969941           0.00541544          1                       1
+   5000     4         5      1       0.193451               3.08914   12.9722           5.07874      2.22253      6.78941   -26.6091                       0.516173             0.182319          0                       0
+   5000     5         4      1       0.163424               4.57103    11.233           6.67883      6.31198      5.44827   -30.8749                       0.329491             0.163111          0                       0
+   5000     6         6      1     0.00731115              -4.53723   2.08665           1.72781     -8.34894      17.8665    -7.1065                       0.985431            0.0104144          1                       1
+   5000     7         3      1       0.159049               5.04331   10.7106           6.82469       6.7423      5.06537   -31.0013                       0.289858             0.159815          0                       0
+   5000     8         6      1      0.0115575              -2.92294  0.962664           2.33723     -7.00165      15.0612   -6.67577                       0.978759            0.0220686          1                       1
+   5000     9         9      1       0.171981               3.31212   10.5847           6.20311      4.58464      5.55569   -26.4056                       0.411517             0.168428          0                       0
+   5000    10         8      1       0.181602               3.42134   12.3262           5.12717      3.73791      6.14601   -27.2499                       0.450422             0.175393          0                       0
+   5000    11         3      1       0.162507               4.98105    11.053           7.10217      6.06699      5.72719   -31.4213                       0.340989             0.162491          0                       0
+   5000    12         9      1       0.171139               3.11121   11.4057            7.1795      5.48032      5.89045   -29.5713                       0.400026             0.167363          0                       0
+   5000    13         8      1       0.166184                4.5255   11.0683           7.24296      5.34333       4.8467   -29.4505                       0.325956             0.164828          0                       0
+   5000    14         4      1       0.166094               2.31491   11.1332           7.25885       7.1419      5.16519   -29.4744                       0.334482             0.165038          0                       0
+   5000    15         5      1       0.195003               4.67851   13.9825          0.426181      1.58418      6.11092   -23.3353                       0.439834             0.184791          0                       0
+   5000    16         4      1       0.158009               5.30556    10.387           6.98144      6.56547      5.74177   -31.5585                       0.322009             0.158749          0                       0
+   5000    17         4      1       0.153598               4.87409   8.96497           7.34672      6.88252      6.26821    -30.685                       0.345735             0.154902          0                       0
+   5000    18         5      1       0.255765              -2.54434   4.08247          0.529943     -2.14725      14.9871   -12.1857                        0.97745             0.212081          0                       0
+   5000    19         2      1       0.166786               4.12164   11.1878           7.57742      5.64438      5.69741    -30.747                       0.366812             0.165251          0                       0
+  10000     0        13      1       0.104111               7.27376   2.26528           12.1975      8.92051      9.08938   -35.9264                       0.310182             0.113578          0                       0
+  10000     1         9      1     0.00588835              -8.02996   8.18662           2.81446     -9.29158      19.2145   -10.8132                       0.978893            0.0109193          1                       1
+  10000     2        11      1      0.0271786              -1.77359  -1.27765            8.8243     0.113299      16.2421   -19.5175                       0.846261            0.0265099          1                       1
+  10000     3        11      1     0.00945584              -6.35844   3.26561           2.71582     -8.88264      20.9163     -9.731                       0.992595            0.0331694          1                       1
+  10000     4         7      1       0.202152               1.57002   16.6858           6.26297      3.49897      8.52337   -32.6763                       0.532772             0.179507          0                       0
+  10000     5         8      1        0.17737               2.56528    15.147            8.7858      6.84385      7.58584    -37.126                       0.424267             0.167776          0                       0
+  10000     6        13      1      0.0103935               -5.7311   3.37512           2.33266     -9.36887      21.2205   -9.88443                       0.991824            0.0380891          1                       1
+  10000     7         8      1       0.154636               4.19412   11.3917            7.7887      9.75035      5.65216   -34.7533                       0.259694             0.157536          0                       0
+  10000     8        11      1      0.0246967              -2.77062   2.06267           1.98653     -7.83119      17.3833   -8.75797                       0.984041             0.106748          1                       0
+  10000     9        14      1      0.0539777              -2.18131   5.28324           1.70368     -1.21592      4.10897   -5.92746                       0.804436             0.277055          0                       0
+  10000    10        14      1        0.17103               3.44781   12.9085           6.85632      6.33164       7.0442   -32.4279                       0.416053             0.165096          0                       0
+  10000    11        10      1       0.202876               4.63386   11.3763           2.11708     -5.32186      11.9817   -21.3027                       0.774401              0.19915          0                       0
+  10000    12        15      1     0.00420722              -4.51017   6.19153          0.807656     -5.38396      10.1921   -5.77447                       0.950079           0.00724347          1                       1
+  10000    13        16      1       0.200015               5.53169   10.3846           4.55332     -3.21508      9.18873   -22.9642                       0.677923             0.181209          0                       0
+  10000    14        10      1       0.205585               2.98925   17.6734            1.4053      2.87316      7.60486    -28.799                       0.472824             0.181985          0                       0
+  10000    15         8      1       0.201532                5.5801   17.6125          0.624236      1.11691      7.48954   -28.8277                       0.452911             0.180105          0                       0
+  10000    16         9      1       0.188108               5.32268   9.48134             3.758     -4.88154      10.7101        -21                       0.753112             0.187275          0                       0
+  10000    17         9      1       0.158926               5.54125   12.5033           9.16216      8.19148      7.16774   -38.6925                       0.339282             0.157947          0                       0
+  10000    18        10      1       0.260664              -3.36635   5.32958           1.12414     -2.44618      17.6646   -15.4299                        0.97906             0.189558          0                       0
+  10000    19         9      1       0.164592               5.81357   14.0395           8.80397      7.31877      6.85514   -39.0737                       0.341456              0.16227          0                       0
+  25000     0        29      1       0.198447             -0.538028   3.32708           2.61849     0.954634      3.87286   -8.05338                       0.748915             0.178384          0                       0
+  25000     1        23      1       0.045672              -4.43197    3.2078           3.07729     -7.46121      19.8923    -11.968                       0.996055             0.250912          1                       0
+  25000     2        26      1       0.120395              -4.57195  0.276633           10.1689     0.214108      21.6637   -24.7826                       0.890827             0.111204          0                       0
+  25000     3        22      1      0.0135159              -8.20419   4.41643           3.32881      -9.6506      25.4139   -13.0747                       0.995072             0.176544          1                       0
+  25000     4        22      1      0.0345858              -4.14409   3.25956           2.48422     -8.62124      21.0791   -11.7714                       0.992649             0.273728          1                       0
+  25000     5        20      1      0.0100269              -8.98611   4.56211           3.25497     -11.0249       27.722   -13.4134                       0.993445             0.121173          1                       0
+  25000     6        25      1      0.0132925              -7.80758   4.50716           2.18353     -11.0176      27.8403    -13.488                       0.993176             0.163526          1                       0
+  25000     7        29      1      0.0183997              -7.22092   4.79977           3.42234     -9.68898      24.6904    -13.664                       0.996991              0.28426          1                       0
+  25000     8        29      1      0.0819197              -3.94783   3.62023           3.15646     -6.19665       18.243   -12.4502                       0.998402             0.222939          0                       0
+  25000     9        37      1       0.207596              -2.92225   6.51438           1.92099    -0.927968      7.38142   -9.69819                       0.877629             0.237245          0                       0
+  25000    10        25      1       0.190607               4.40743   19.1728           2.33567      4.69365      9.16876   -35.4552                       0.462114             0.171716          0                       0
+  25000    11        24      1       0.199844               6.20221   14.1385           3.02474     -6.51895      14.8903   -27.9951                       0.766324             0.184042          0                       0
+  25000    12        29      1       0.012191              -4.52939   4.40335            1.7207      -5.7132      13.3521   -7.40207                        0.99302            0.0785714          1                       0
+  25000    13        27      1      0.0628985              -3.68049   3.59901           2.76611     -7.22112      19.1692   -12.2072                       0.996418             0.238877          0                       0
+  25000    14        28      1      0.0627622              -4.03127   3.65222           2.80142     -7.11248      19.4938   -12.3849                       0.997385             0.238525          0                       0
+  25000    15        20      1       0.227199              0.256193   2.66447           1.64546     -1.44361      5.25406   -6.43843                        0.93217             0.194829          0                       0
+  25000    16        27      1      0.0103833              -8.41519   10.3999            2.6289     -10.7996       23.806   -15.2674                       0.982459             0.179356          1                       0
+  25000    17        21      1       0.138677              -5.43069    2.5691           3.00337     -6.71726      27.7597   -18.4171                       0.985991             0.161441          0                       0
+  25000    18        25      1      0.0496891              -3.33335   5.78511           1.57663     -2.68047      8.63095   -7.92386                       0.945274             0.324745          1                       0
+  25000    19        22      1       0.294314              -1.07495   2.72942           1.40165     -1.50122      7.12814   -6.70157                       0.981683             0.206127          0                       0
+  56961     0        57      1      0.0652535              -3.72027   3.64046           2.24006     -4.92218       14.735   -9.79018                              1             0.241418          0                       0
+
+== A6_meta_feature_shift.csv ==
+         member  KS_test_legit_vs_uniform  mean_ECDF_test_legit  mean_ECDF_val_fraud  mean_ECDF_test_fraud  KS_fraud_val_vs_test  p_fraud_val_vs_test  share_test_fraud_above_val_max  share_test_legit_above_val_max  PR_AUC_val_member  PR_AUC_test_member
+IsolationForest                 0.0210923              0.487319             0.935023              0.937967              0.110877             0.769502                               0                     1.75787e-05          0.0201946           0.0368724
+            LOF                  0.232868              0.658867             0.936041              0.953038              0.174737             0.239996                       0.0933333                     1.75787e-05           0.630707            0.612808
+    OneClassSVM                  0.181476              0.619585             0.944786              0.965342             0.0968421             0.883239                               0                     8.78935e-05          0.0660351            0.125226
+         DBSCAN                 0.0259582              0.492237             0.925471              0.935602              0.201404             0.122432                               0                     5.27361e-05          0.0131703           0.0250259
+         KMeans                  0.111781              0.559111             0.954426              0.966093              0.262456            0.0181575                               0                     5.27361e-05           0.030205           0.0674557
+
+== A6_meta_objective_check.csv ==
+                                     fit  PR_AUC_on_validation  PR_AUC_on_test  coef_IsolationForest  coef_LOF  coef_OneClassSVM  coef_DBSCAN  coef_KMeans
+                full validation (as run)             0.0967741       0.0652535              -3.72027   3.64046           2.24006     -4.92218       14.735
+test labels (diagnostic only, in-sample)              0.151002        0.207628              -5.10692   3.59578           1.67775     -2.58184      23.1075
+
+== A6_meta_regularisation_path.csv ==
+     C  val_PR_AUC_in_sample  test_PR_AUC  coef_IsolationForest  coef_LOF  coef_OneClassSVM  coef_DBSCAN  coef_KMeans
+0.0001             0.0685811     0.142346              0.379722  0.405178          0.409728     0.370589     0.406143
+ 0.001             0.0751171     0.152063              0.968596   1.36498           1.31245     0.942945      1.22076
+  0.01             0.0946237     0.179261              0.626284   2.60753           2.36512      0.67031      2.82596
+   0.1              0.234199     0.277465               -1.7276   3.31036           2.57298     -1.88957      8.31437
+     1             0.0967741    0.0652535              -3.72027   3.64046           2.24006     -4.92218       14.735
+    10              0.083255    0.0493351              -4.18563   3.70842           2.13438     -5.77141      16.5432
+   100             0.0819004    0.0476315               -4.2395   3.71834           2.12079     -5.86503       16.747
+
+== check_table13_vs_R1.csv ==
+          unit regime        detector     PR_AUC  R1_table13  matches_4dp
+PaySim_noresid      U IsolationForest  0.0142505      0.0143         True
+PaySim_noresid      U             LOF 0.00255853      0.0026         True
+PaySim_noresid      U     OneClassSVM   0.055152      0.0552         True
+PaySim_noresid      U          DBSCAN  0.0556343      0.0556         True
+PaySim_noresid      U          KMeans  0.0368514      0.0369         True
+PaySim_noresid      U        Ensemble  0.0190508      0.0191         True
+PaySim_noresid      N IsolationForest  0.0137392      0.0137         True
+PaySim_noresid      N             LOF 0.00252591      0.0025         True
+PaySim_noresid      N     OneClassSVM  0.0469787       0.047         True
+PaySim_noresid      N          DBSCAN  0.0226214      0.0226         True
+PaySim_noresid      N          KMeans  0.0368505      0.0369         True
+PaySim_noresid      N        Ensemble  0.0420273       0.042         True
+ PaySim_nostep      U IsolationForest   0.012886      0.0129         True
+ PaySim_nostep      U             LOF   0.148251      0.1483         True
+ PaySim_nostep      U     OneClassSVM  0.0848726      0.0849         True
+ PaySim_nostep      U          DBSCAN  0.0215139      0.0215         True
+ PaySim_nostep      U          KMeans  0.0365564      0.0366         True
+ PaySim_nostep      U        Ensemble  0.0590248       0.059         True
+ PaySim_nostep      N IsolationForest  0.0124241      0.0124         True
+ PaySim_nostep      N             LOF   0.190518      0.1905         True
+ PaySim_nostep      N     OneClassSVM   0.104815      0.1048         True
+ PaySim_nostep      N          DBSCAN  0.0215209      0.0215         True
+ PaySim_nostep      N          KMeans   0.038145      0.0381         True
+ PaySim_nostep      N        Ensemble  0.0686325      0.0686         True
+ PaySim_noboth      U IsolationForest  0.0159304      0.0159         True
+ PaySim_noboth      U             LOF  0.0683978      0.0684         True
+ PaySim_noboth      U     OneClassSVM   0.050631      0.0506         True
+ PaySim_noboth      U          DBSCAN  0.0191985      0.0192         True
+ PaySim_noboth      U          KMeans  0.0310527      0.0311         True
+ PaySim_noboth      U        Ensemble  0.0515583      0.0516         True
+ PaySim_noboth      N IsolationForest  0.0150948      0.0151         True
+ PaySim_noboth      N             LOF  0.0716534      0.0717         True
+ PaySim_noboth      N     OneClassSVM  0.0528529      0.0529         True
+ PaySim_noboth      N          DBSCAN  0.0192088      0.0192         True
+ PaySim_noboth      N          KMeans  0.0310765      0.0311         True
+ PaySim_noboth      N        Ensemble  0.0505862      0.0506         True

@@ -1,0 +1,109 @@
+[22:22:58  +   0.1 min] headline_ULB: start
+[22:24:39  +   1.7 min] headline_ULB: done
+[22:24:58  +   2.1 min] headline_PaySim: start
+[22:56:38  +  33.7 min] headline_PaySim: done
+[22:57:10  +  34.3 min] PaySim_noresid: start
+[23:17:29  +  54.6 min] PaySim_noresid: done
+[23:17:41  +  54.8 min] PaySim_nostep: start
+[23:23:14  +  60.3 min] PaySim_nostep: done
+[23:23:26  +  60.5 min] PaySim_noboth: start
+[23:29:52  +  67.0 min] PaySim_noboth: done
+[23:30:13  +  67.3 min] PaySim_rolling_nostep_fold0: start
+[23:33:28  +  70.6 min] PaySim_rolling_nostep_fold0: done
+[23:33:28  +  70.6 min] PaySim_rolling_nostep_fold1: start
+[23:37:02  +  74.1 min] PaySim_rolling_nostep_fold1: done
+[23:37:02  +  74.1 min] PaySim_rolling_nostep_fold2: start
+[23:40:40  +  77.8 min] PaySim_rolling_nostep_fold2: done
+[23:40:40  +  77.8 min] PaySim_rolling_nostep_fold3: start
+[23:45:06  +  82.2 min] PaySim_rolling_nostep_fold3: done
+[23:45:06  +  82.2 min] PaySim_rolling_nostep_fold4: start
+[23:50:02  +  87.1 min] PaySim_rolling_nostep_fold4: done
+[23:50:23  +  87.5 min] PaySim_random_nostep: start
+[23:59:43  +  96.8 min] PaySim_random_nostep: done
+[23:59:50  +  96.9 min] PaySim_matched_nostep_draw0: start
+[00:09:38  + 106.7 min] PaySim_matched_nostep_draw0: done
+[00:09:45  + 106.8 min] PaySim_matched_nostep_draw1: start
+[00:18:57  + 116.0 min] PaySim_matched_nostep_draw1: done
+[00:19:04  + 116.2 min] PaySim_matched_nostep_draw2: start
+[00:25:44  + 122.8 min] PaySim_matched_nostep_draw2: done
+[00:25:44  + 122.8 min] tuned_ensemble_ULB: start
+[00:25:57  + 123.1 min]   ULB/U/fixed: IsolationForest 0.0546 | LOF 0.0763 | OneClassSVM 0.0839 | DBSCAN 0.0247 | KMeans 0.0679 | Ensemble 0.0695 | Ensemble4 0.0749
+[00:26:16  + 123.4 min]   ULB/U/selected: IsolationForest 0.0518 | LOF 0.3175 | OneClassSVM 0.0839 | DBSCAN 0.0791 | KMeans 0.0794 | Ensemble 0.1210 | Ensemble4 0.1276
+[00:26:30  + 123.6 min]   ULB/N/fixed: IsolationForest 0.0369 | LOF 0.6032 | OneClassSVM 0.1248 | DBSCAN 0.0250 | KMeans 0.0673 | Ensemble 0.1400 | Ensemble4 0.1626
+[00:26:53  + 124.0 min]   ULB/N/selected: IsolationForest 0.0401 | LOF 0.6032 | OneClassSVM 0.1248 | DBSCAN 0.0290 | KMeans 0.1021 | Ensemble 0.1461 | Ensemble4 0.1672
+[00:26:53  + 124.0 min] tuned_ensemble_ULB: done
+[00:26:53  + 124.0 min] tuned_ensemble_PaySim: start
+[00:29:22  + 126.5 min]   PaySim/U/fixed: IsolationForest 0.0644 | LOF 0.0076 | OneClassSVM 0.2437 | DBSCAN 0.0665 | KMeans 0.1121 | Ensemble 0.2426 | Ensemble4 0.1142
+[00:32:58  + 130.1 min]   PaySim/U/selected: IsolationForest 0.0618 | LOF 0.0069 | OneClassSVM 0.2465 | DBSCAN 0.2219 | KMeans 0.1438 | Ensemble 0.0833 | Ensemble4 0.0816
+[00:35:17  + 132.4 min]   PaySim/N/fixed: IsolationForest 0.0687 | LOF 0.0075 | OneClassSVM 0.2185 | DBSCAN 0.0665 | KMeans 0.1129 | Ensemble 0.2403 | Ensemble4 0.1109
+[00:39:01  + 136.1 min]   PaySim/N/selected: IsolationForest 0.0687 | LOF 0.0068 | OneClassSVM 0.2164 | DBSCAN 0.2169 | KMeans 0.1378 | Ensemble 0.0708 | Ensemble4 0.0695
+[00:39:01  + 136.1 min] tuned_ensemble_PaySim: done
+[00:39:01  + 136.1 min] draws_ULB_ref_U: start
+[00:39:16  + 136.4 min]   ULB/ref/U seed 42: IsolationForest 0.0546 | LOF 0.0763 | OneClassSVM 0.0839 | DBSCAN 0.0247 | KMeans 0.0679 | Ensemble 0.0695 | Ensemble4 0.0749
+[00:39:25  + 136.5 min]   ULB/ref/U seed 43: IsolationForest 0.0546 | LOF 0.0422 | OneClassSVM 0.0560 | DBSCAN 0.0258 | KMeans 0.0679 | Ensemble 0.0464 | Ensemble4 0.0480
+[00:39:35  + 136.7 min]   ULB/ref/U seed 44: IsolationForest 0.0546 | LOF 0.0639 | OneClassSVM 0.0725 | DBSCAN 0.0291 | KMeans 0.0679 | Ensemble 0.0546 | Ensemble4 0.0588
+[00:39:45  + 136.8 min]   ULB/ref/U seed 45: IsolationForest 0.0546 | LOF 0.0466 | OneClassSVM 0.0541 | DBSCAN 0.0246 | KMeans 0.0679 | Ensemble 0.0256 | Ensemble4 0.0303
+[00:39:55  + 137.0 min]   ULB/ref/U seed 46: IsolationForest 0.0546 | LOF 0.0149 | OneClassSVM 0.0564 | DBSCAN 0.0251 | KMeans 0.0679 | Ensemble 0.0271 | Ensemble4 0.0290
+[00:39:55  + 137.0 min] draws_ULB_ref_U: done
+[00:39:55  + 137.0 min] draws_ULB_ref_N: start
+[00:40:12  + 137.3 min]   ULB/ref/N seed 42: IsolationForest 0.0369 | LOF 0.6032 | OneClassSVM 0.1248 | DBSCAN 0.0250 | KMeans 0.0673 | Ensemble 0.1400 | Ensemble4 0.1626
+[00:40:22  + 137.5 min]   ULB/ref/N seed 43: IsolationForest 0.0369 | LOF 0.5544 | OneClassSVM 0.1708 | DBSCAN 0.0252 | KMeans 0.0673 | Ensemble 0.1496 | Ensemble4 0.1750
+[00:40:32  + 137.6 min]   ULB/ref/N seed 44: IsolationForest 0.0369 | LOF 0.5744 | OneClassSVM 0.1384 | DBSCAN 0.0251 | KMeans 0.0673 | Ensemble 0.1363 | Ensemble4 0.1614
+[00:40:42  + 137.8 min]   ULB/ref/N seed 45: IsolationForest 0.0369 | LOF 0.5201 | OneClassSVM 0.1302 | DBSCAN 0.0246 | KMeans 0.0673 | Ensemble 0.1402 | Ensemble4 0.1712
+[00:40:52  + 138.0 min]   ULB/ref/N seed 46: IsolationForest 0.0369 | LOF 0.5340 | OneClassSVM 0.1000 | DBSCAN 0.0247 | KMeans 0.0673 | Ensemble 0.1376 | Ensemble4 0.1634
+[00:40:52  + 138.0 min] draws_ULB_ref_N: done
+[00:40:52  + 138.0 min] draws_PaySim_ref_U: start
+[00:44:39  + 141.7 min]   PaySim/ref/U seed 42: IsolationForest 0.0161 | LOF 0.0031 | OneClassSVM 0.1054 | DBSCAN 0.0248 | KMeans 0.0419 | Ensemble 0.1502 | Ensemble4 0.0798
+[00:47:24  + 144.5 min]   PaySim/ref/U seed 43: IsolationForest 0.0161 | LOF 0.0030 | OneClassSVM 0.0475 | DBSCAN 0.0251 | KMeans 0.0419 | Ensemble 0.1346 | Ensemble4 0.0703
+[00:50:52  + 148.0 min]   PaySim/ref/U seed 44: IsolationForest 0.0161 | LOF 0.0030 | OneClassSVM 0.0496 | DBSCAN 0.0535 | KMeans 0.0419 | Ensemble 0.0763 | Ensemble4 0.0750
+[00:53:56  + 151.0 min]   PaySim/ref/U seed 45: IsolationForest 0.0161 | LOF 0.0031 | OneClassSVM 0.0604 | DBSCAN 0.0607 | KMeans 0.0419 | Ensemble 0.0796 | Ensemble4 0.0772
+[00:56:59  + 154.1 min]   PaySim/ref/U seed 46: IsolationForest 0.0161 | LOF 0.0030 | OneClassSVM 0.0694 | DBSCAN 0.0257 | KMeans 0.0419 | Ensemble 0.1336 | Ensemble4 0.0782
+[00:56:59  + 154.1 min] draws_PaySim_ref_U: done
+[00:56:59  + 154.1 min] draws_PaySim_ref_N: start
+[01:00:43  + 157.8 min]   PaySim/ref/N seed 42: IsolationForest 0.0165 | LOF 0.0030 | OneClassSVM 0.1018 | DBSCAN 0.0248 | KMeans 0.0458 | Ensemble 0.1706 | Ensemble4 0.0874
+[01:03:04  + 160.2 min]   PaySim/ref/N seed 43: IsolationForest 0.0165 | LOF 0.0031 | OneClassSVM 0.0994 | DBSCAN 0.0247 | KMeans 0.0458 | Ensemble 0.1735 | Ensemble4 0.0912
+[01:05:47  + 162.9 min]   PaySim/ref/N seed 44: IsolationForest 0.0165 | LOF 0.0031 | OneClassSVM 0.0996 | DBSCAN 0.0962 | KMeans 0.0458 | Ensemble 0.0941 | Ensemble4 0.0906
+[01:08:20  + 165.4 min]   PaySim/ref/N seed 45: IsolationForest 0.0165 | LOF 0.0032 | OneClassSVM 0.1070 | DBSCAN 0.0256 | KMeans 0.0458 | Ensemble 0.1552 | Ensemble4 0.1092
+[01:11:42  + 168.8 min]   PaySim/ref/N seed 46: IsolationForest 0.0165 | LOF 0.0031 | OneClassSVM 0.1149 | DBSCAN 0.1082 | KMeans 0.0458 | Ensemble 0.0843 | Ensemble4 0.0812
+[01:11:42  + 168.8 min] draws_PaySim_ref_N: done
+[01:12:46  + 169.9 min]   intervals done: headline_ULB/U
+[01:12:47  + 169.9 min]   intervals done: headline_ULB/N
+[01:13:00  + 170.1 min]   intervals done: headline_PaySim/U
+[01:13:13  + 170.3 min]   intervals done: headline_PaySim/N
+[01:13:25  + 170.5 min]   intervals done: PaySim_noresid/U
+[01:13:38  + 170.7 min]   intervals done: PaySim_noresid/N
+[01:13:52  + 171.0 min]   intervals done: PaySim_nostep/U
+[01:14:06  + 171.2 min]   intervals done: PaySim_nostep/N
+[01:14:21  + 171.4 min]   intervals done: PaySim_noboth/U
+[01:14:35  + 171.7 min]   intervals done: PaySim_noboth/N
+[01:14:37  + 171.7 min]   paired comparisons done: headline_ULB/U
+[01:14:38  + 171.7 min]   paired comparisons done: headline_ULB/N
+[01:15:10  + 172.3 min]   paired comparisons done: headline_PaySim/U
+[01:15:43  + 172.8 min]   paired comparisons done: headline_PaySim/N
+[10:06:54  +   0.0 min] S4: all five origins already done
+[10:59:59  +  53.1 min] tuned_ensemble_ULB: already done, skipped
+[10:59:59  +  53.1 min] tuned_ensemble_PaySim: already done, skipped
+[10:59:59  +  53.1 min] draws_ULB_ref_U: already done, skipped
+[10:59:59  +  53.1 min] draws_ULB_ref_N: already done, skipped
+[10:59:59  +  53.1 min] draws_PaySim_ref_U: already done, skipped
+[10:59:59  +  53.1 min] draws_PaySim_ref_N: already done, skipped
+[11:22:30  +  75.6 min]   intervals done: headline_ULB/U
+[11:22:32  +  75.7 min]   intervals done: headline_ULB/N
+[11:23:06  +  76.2 min]   intervals done: headline_PaySim/U
+[11:23:43  +  76.9 min]   intervals done: headline_PaySim/N
+[11:24:20  +  77.5 min]   intervals done: PaySim_noresid/U
+[11:24:58  +  78.1 min]   intervals done: PaySim_noresid/N
+[11:25:30  +  78.6 min]   intervals done: PaySim_nostep/U
+[11:26:11  +  79.3 min]   intervals done: PaySim_nostep/N
+[11:26:54  +  80.0 min]   intervals done: PaySim_noboth/U
+[11:27:39  +  80.8 min]   intervals done: PaySim_noboth/N
+[11:27:43  +  80.8 min]   paired comparisons done: headline_ULB/U
+[11:27:47  +  80.9 min]   paired comparisons done: headline_ULB/N
+[11:29:36  +  82.7 min]   paired comparisons done: headline_PaySim/U
+[11:31:08  +  84.3 min]   paired comparisons done: headline_PaySim/N
+[12:40:14  + 153.4 min] tuned_ensemble_PaySim_v2: start
+[12:47:23  + 160.5 min]   PaySim/U/fixed: IsolationForest 0.0644 | LOF 0.0076 | OneClassSVM 0.2437 | DBSCAN 0.0665 | KMeans 0.1121 | Ensemble 0.2426 | Ensemble4 0.1142
+[12:57:36  + 170.7 min]   PaySim/U/selected: IsolationForest 0.0644 | LOF 0.0069 | OneClassSVM 0.2465 | DBSCAN 0.2219 | KMeans 0.1438 | Ensemble 0.0682 | Ensemble4 0.0669
+[13:04:41  + 177.8 min]   PaySim/N/fixed: IsolationForest 0.0687 | LOF 0.0075 | OneClassSVM 0.2185 | DBSCAN 0.0665 | KMeans 0.1129 | Ensemble 0.2403 | Ensemble4 0.1109
+[13:14:42  + 187.8 min]   PaySim/N/selected: IsolationForest 0.0687 | LOF 0.0068 | OneClassSVM 0.2164 | DBSCAN 0.2169 | KMeans 0.1378 | Ensemble 0.0708 | Ensemble4 0.0695
+[13:14:42  + 187.8 min] tuned_ensemble_PaySim_v2: done
