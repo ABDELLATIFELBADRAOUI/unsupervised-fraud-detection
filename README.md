@@ -2,14 +2,15 @@
 
 Reproduction package for the manuscript *Rethinking Unsupervised Credit Card Fraud
 Detection: A Leakage-Controlled Chronological Benchmark* (Array, manuscript
-ARRAY-D-26-04414).
+ARRAY-D-26-04414R1).
 
 The results reported in the paper are produced by `revision_pipeline_v2.ipynb`, supplemented
 by the two cells in `scripts/clock_ablation/`, run after the notebook (Table 13 and the
-clock-ablation statements of Sections 4.3 and 4.7), and by `scripts/select_hyperparameters.py`,
-which rebuilds the validation-selected configurations from the notebook's hyperparameter
-grid. Figure 1 is drawn from `scripts/figure1_framework.tex`. The result files are committed
-under `results/`, so the tables can be checked without re-running anything.
+clock-ablation statements of Sections 4.3 and 4.7), and by
+`notebooks/revision_R2_reviewer1.ipynb`, which computes the analyses added in the second
+revision (see [Second revision](#second-revision) below). Figure 1 is drawn by
+`scripts/figure1_data_access.py`. The result files are committed under `results/`, so the
+tables can be checked without re-running anything.
 
 `results/canonical_results.csv` is the canonical frame: 8,188 rows over 628 `run_id`s,
 covering the headline run, the rolling origins, the contamination sweep, the split
@@ -135,6 +136,46 @@ and 13; a `require()` guard raises a clear message if the order is wrong.
 
 ---
 
+## Second revision
+
+`notebooks/revision_R2_reviewer1.ipynb` computes the analyses added in response to the
+second-round review. Its cell 2 copies the pipeline definitions of
+`revision_pipeline_v2_1.ipynb` verbatim. Before any new analysis it re-runs the headline
+configuration and compares it with the archived run: 90 of 90 values on each dataset,
+largest difference 0 on ULB and 3.1 × 10⁻⁹ on PaySim (`results/R2/reproduction_check.json`),
+and the 36 values of Table 13 (`results/R2/tables/check_table13_vs_R1.csv`). It then computes
+the five reference-set draws, the four-member ensemble, the ⌈ρN⌉ alert budgets, the
+block-bootstrap intervals and Holm-adjusted paired comparisons, the PaySim rolling origins
+and random arms without the simulator clock, the ensemble rebuilt from the
+validation-selected members, and the diagnostic of the meta-classifier.
+
+The notebook is archived as executed, with its outputs. Its last cell was run after the
+main run: it sets Isolation Forest on PaySim under the label-free regime to 200 trees, the
+configuration of `results/phase0/table16_hyperparameter_selected.csv`, rebuilds the
+ensemble at the selected configurations (unit `tuned_ensemble_PaySim_v2`) and rewrites
+table A4 and `R2_VALUES.txt`. The earlier unit, `tuned_ensemble_PaySim`, which used
+100 trees, is kept; the manuscript reports the second.
+
+| Path | Contents |
+|---|---|
+| `results/R2/tables/` | the result tables A1–A6 and the Table 13 check |
+| `results/R2/units/` | one file per completed step |
+| `results/R2/figures/` | the diagnostic of the meta-classifier (Supplementary Figure S1) |
+| `results/R2/R2_VALUES.txt` | the reproduction check, the list of completed steps and every result table, in one text file |
+| `results/R2/manifest.json`, `results/R2/log_r2.txt` | run manifest and timed log |
+
+Not included: the five `scores_*.npz` files of `results/R2/units/` (785 MB), which the
+notebook regenerates.
+
+To re-run it, set the paths in cell 1: the two datasets, `OUT_DIR`, and `R1_DIR`, a folder
+holding the files of the archived run that the notebook reads (`canonical_results.csv`,
+`manifest.json`, `phase0/table_paired_bootstrap_ensemble.csv`,
+`table_aggregation_schemes.csv`, `table_bootstrap_ci.csv`, `table_label_efficiency_raw.csv`
+and `table_subsampling_raw.csv` from `results/`, and `test_scores.npz` from Zenodo version
+1.2.0). Use the versions of `requirements.txt`; the run takes several hours.
+
+---
+
 ## Two implementation points worth reading
 
 **Out-of-sample LOF.** `novelty=True` is used in all regimes. With `novelty=False`,
@@ -174,7 +215,8 @@ Running the notebook writes to `revision_v2/`:
 manifest.json              versions, seeds, grids, caps
 canonical_results.csv      one row per (run_id, metric)
 test_scores.npz            raw headline test scores per configuration (83 MB; not tracked
-                           by Git, archived as a separate file in the Zenodo record)
+                           by Git, archived as a separate file in Zenodo version 1.2.0,
+                           https://doi.org/10.5281/zenodo.22847968)
 table_*.csv                individual result tables
 manuscript_tables/         the same tables formatted for the paper
 figures/                   PR, ROC, rolling origin, label efficiency,

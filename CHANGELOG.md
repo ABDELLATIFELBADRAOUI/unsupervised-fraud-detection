@@ -1,12 +1,16 @@
 # Changelog
 
-## [1.3.0] — 2026-09-27
+## [1.3.0] — 2026-10-16
 
-Accompanies the revised manuscript ARRAY-D-26-04414, now titled *Rethinking Unsupervised
-Credit Card Fraud Detection: A Leakage-Controlled Chronological Benchmark*.
+Accompanies the second revision of the manuscript, ARRAY-D-26-04414R1, *Rethinking
+Unsupervised Credit Card Fraud Detection: A Leakage-Controlled Chronological Benchmark*.
 
 ### Added
 
+- `notebooks/revision_R2_reviewer1.ipynb`, archived as executed, and its results in
+  `results/R2/`: the analyses added in the second revision (see the README). The five score
+  files of `results/R2/units/` (`scores_*.npz`, 785 MB) are not archived; the notebook
+  regenerates them.
 - `scripts/clock_ablation/ONE_CELL_clock_ablation.py` and
   `scripts/clock_ablation/CELL_2_paysim_no_step_no_residuals.py`: the ablation of the absolute
   clocks (`Time` on ULB, `step` on PaySim) and the clock × balance-residual design of Table 13.
@@ -19,28 +23,33 @@ Credit Card Fraud Detection: A Leakage-Controlled Chronological Benchmark*.
   not modified.
 - `results/canonical_results.csv` now holds 8,188 rows over 628 `run_id`s (7,372 over 532 in
   1.2.0).
-- `scripts/select_hyperparameters.py`: rebuilds `results/phase0/table16_hyperparameter_selected.csv`
-  and `results/phase0/table3_selected_block.csv` from `results/table_hyperparameter_sensitivity.csv`.
-- `scripts/figure1_framework.tex` and `results/figures/figure1_framework.pdf`: Figure 1.
+- `scripts/figure1_data_access.py` and `results/figures/figure1_data_access.pdf`: Figure 1 of
+  the second revision.
 
 ### Fixed
 
-- **Tie-break on validation PR-AUC.** On the 4-decimal values, the comparison
-  `val_PR_AUC >= top - 1e-4` excluded one tie through floating-point rounding (PaySim,
-  label-free, Isolation Forest: 0.0022 and 0.0021). The comparison now subtracts 1e-9 in the
-  three places it appears. The selected configuration of that cell becomes 100 trees
-  (validation 0.0021, test 0.0618); no other selection changes. The stored outputs of those
-  notebook cells predate the fix; the phase-0 files are regenerated.
 - `v1_submitted/README.md`: the submitted code always fitted LOF with `novelty=True`; the
   defect was the `novelty=False` entry of the submitted Table 3.
 
 ### Notes
 
+- The hyperparameter selection is that of 1.2.0: `results/phase0/` and
+  `notebooks/revision_pipeline_v2_1.ipynb` are unchanged from 1.2.0. A change made on `main`
+  on 27 September 2026, never released, had applied the tie-break to the 4-decimal validation
+  values with a slack of 1e-9, which made Isolation Forest on PaySim under the label-free
+  regime select 100 trees; it is withdrawn, with the script `scripts/select_hyperparameters.py`
+  it added. On the unrounded validation PR-AUC values, 200 trees (0.002203) and 100 trees
+  (0.002071) differ by 1.3 × 10⁻⁴, more than the tolerance of 10⁻⁴
+  (`results/R2/units/tuned_ensemble_PaySim.csv` and `tuned_ensemble_PaySim_v2.csv`), so the
+  selection of 200 trees stands.
 - `test_scores.npz`, the saved headline test scores (83 MB), from which the 200,000-row window
-  comparison of Table 18 and the position statistics of Section 4.7 can be recomputed, is not
-  tracked by Git (see `.gitignore`); it is archived as a separate file in the Zenodo record.
-- Section 8b of the notebook (the ensemble rebuilt at the validation-selected configurations)
-  is not used in the manuscript, and its output is not archived.
+  comparison of Table 14 (Table 18 of the first revision) and the position statistics of
+  Section 4.7 can be recomputed, is not tracked by Git (see `.gitignore`); it is archived as a
+  separate file in Zenodo version 1.2.0 (https://doi.org/10.5281/zenodo.22847968).
+- Section 8b of `notebooks/revision_pipeline_v2_1.ipynb` (the ensemble rebuilt at the
+  validation-selected configurations) was not run for the archived results; the second
+  revision reports that analysis from step S6 of `notebooks/revision_R2_reviewer1.ipynb`
+  (on PaySim, unit `tuned_ensemble_PaySim_v2`, written by its last cell).
 
 ## [1.2.0] — 2026-09-18
 
