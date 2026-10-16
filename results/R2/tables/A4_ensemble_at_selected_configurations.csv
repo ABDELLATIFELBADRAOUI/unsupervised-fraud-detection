@@ -1,0 +1,57 @@
+dataset,regime,setting,detector,config,val_PR_AUC,test_PR_AUC,window
+ULB,U,fixed,IsolationForest,{},0.0270566657315083,0.054562789355073,full validation and test windows
+ULB,U,fixed,LOF,{},0.1010232770600944,0.0762793993340145,full validation and test windows
+ULB,U,fixed,OneClassSVM,{},0.0379076699969671,0.0838610899727195,full validation and test windows
+ULB,U,fixed,DBSCAN,{},0.0130193931914069,0.0247251001182242,full validation and test windows
+ULB,U,fixed,KMeans,{},0.0347344205637976,0.0678859550353649,full validation and test windows
+ULB,U,fixed,Ensemble,members at the fixed configuration,0.0396870122881689,0.0695126568790514,full validation and test windows
+ULB,U,fixed,Ensemble4,members at the fixed configuration,0.0471496397821634,0.0749131924121916,full validation and test windows
+ULB,U,selected,IsolationForest,"{""n_estimators"": 100}",0.0271940896295725,0.0517966105634797,full validation and test windows
+ULB,U,selected,LOF,"{""n_neighbors"": 50}",0.1968587088672976,0.3175000770668751,full validation and test windows
+ULB,U,selected,OneClassSVM,"{""gamma"": ""scale""}",0.0379076699969671,0.0838610899727195,full validation and test windows
+ULB,U,selected,DBSCAN,"{""min_samples"": 5}",0.0320951664402656,0.0791322717255826,full validation and test windows
+ULB,U,selected,KMeans,"{""k"": 16}",0.0354934940850811,0.079415418822163,full validation and test windows
+ULB,U,selected,Ensemble,members at the selected configuration,0.052488648853624,0.1209571574722625,full validation and test windows
+ULB,U,selected,Ensemble4,members at the selected configuration,0.0565644013421995,0.1276097629543391,full validation and test windows
+ULB,N,fixed,IsolationForest,{},0.0201946300704874,0.0368963757988218,full validation and test windows
+ULB,N,fixed,LOF,{},0.6307070718943899,0.603157863943587,full validation and test windows
+ULB,N,fixed,OneClassSVM,{},0.0660350886951086,0.1247601733214725,full validation and test windows
+ULB,N,fixed,DBSCAN,{},0.01317033764324,0.0250214983874059,full validation and test windows
+ULB,N,fixed,KMeans,{},0.0302049709798667,0.0673482356157087,full validation and test windows
+ULB,N,fixed,Ensemble,members at the fixed configuration,0.0670554044236646,0.1399664083152083,full validation and test windows
+ULB,N,fixed,Ensemble4,members at the fixed configuration,0.0860929910179377,0.1626466452146948,full validation and test windows
+ULB,N,selected,IsolationForest,"{""n_estimators"": 400}",0.0230278174596255,0.0401050709667712,full validation and test windows
+ULB,N,selected,LOF,"{""n_neighbors"": 20}",0.6307070718943899,0.603157863943587,full validation and test windows
+ULB,N,selected,OneClassSVM,"{""gamma"": ""scale""}",0.0660350886951086,0.1247601733214725,full validation and test windows
+ULB,N,selected,DBSCAN,"{""eps_scale"": 4.0}",0.0150525225982308,0.0290339611978951,full validation and test windows
+ULB,N,selected,KMeans,"{""k"": 32}",0.0485104783247403,0.1020904786021175,full validation and test windows
+ULB,N,selected,Ensemble,members at the selected configuration,0.0731662993610273,0.1461326342758974,full validation and test windows
+ULB,N,selected,Ensemble4,members at the selected configuration,0.0960122586467142,0.1672064038302332,full validation and test windows
+PaySim,U,fixed,IsolationForest,{},0.0022027395329691,0.0643937021843388,"most recent 200,000 validation and test rows"
+PaySim,U,fixed,LOF,{},0.0004497009410599,0.00759498019757,"most recent 200,000 validation and test rows"
+PaySim,U,fixed,OneClassSVM,{},0.0217105054030988,0.2436520391483145,"most recent 200,000 validation and test rows"
+PaySim,U,fixed,DBSCAN,{},0.0042453854758725,0.0664642204522265,"most recent 200,000 validation and test rows"
+PaySim,U,fixed,KMeans,{},0.0066635116459831,0.1121478742175189,"most recent 200,000 validation and test rows"
+PaySim,U,fixed,Ensemble,members at the fixed configuration,0.0273080183607351,0.2426097871648652,"most recent 200,000 validation and test rows"
+PaySim,U,fixed,Ensemble4,members at the fixed configuration,0.0399407308761937,0.1142238073005874,"most recent 200,000 validation and test rows"
+PaySim,U,selected,IsolationForest,"{""n_estimators"": 200}",0.0022027395329691,0.0643937021843388,"most recent 200,000 validation and test rows"
+PaySim,U,selected,LOF,"{""n_neighbors"": 5}",0.0003623116463747,0.0068585520836717,"most recent 200,000 validation and test rows"
+PaySim,U,selected,OneClassSVM,"{""gamma"": 0.1}",0.0234687064564091,0.2464607798083412,"most recent 200,000 validation and test rows"
+PaySim,U,selected,DBSCAN,"{""eps_scale"": 0.5}",0.0192070627118865,0.2219489782167872,"most recent 200,000 validation and test rows"
+PaySim,U,selected,KMeans,"{""k"": 32}",0.0112930786901302,0.1437605914503259,"most recent 200,000 validation and test rows"
+PaySim,U,selected,Ensemble,members at the selected configuration,0.0334188722242246,0.068183962896944,"most recent 200,000 validation and test rows"
+PaySim,U,selected,Ensemble4,members at the selected configuration,0.0341934205920093,0.0669286356444877,"most recent 200,000 validation and test rows"
+PaySim,N,fixed,IsolationForest,{},0.0021348137116514,0.0686680350815006,"most recent 200,000 validation and test rows"
+PaySim,N,fixed,LOF,{},0.000433766033183,0.0075122350467102,"most recent 200,000 validation and test rows"
+PaySim,N,fixed,OneClassSVM,{},0.0223387522431942,0.2184568281282091,"most recent 200,000 validation and test rows"
+PaySim,N,fixed,DBSCAN,{},0.0042456209422736,0.066475258314916,"most recent 200,000 validation and test rows"
+PaySim,N,fixed,KMeans,{},0.0068461901226737,0.1129334348343208,"most recent 200,000 validation and test rows"
+PaySim,N,fixed,Ensemble,members at the fixed configuration,0.0381722935238975,0.2403285053104822,"most recent 200,000 validation and test rows"
+PaySim,N,fixed,Ensemble4,members at the fixed configuration,0.0526507906657831,0.1108903665811629,"most recent 200,000 validation and test rows"
+PaySim,N,selected,IsolationForest,"{""n_estimators"": 200}",0.0021348137116514,0.0686680350815006,"most recent 200,000 validation and test rows"
+PaySim,N,selected,LOF,"{""n_neighbors"": 5}",0.0003688148900254,0.0067933157680205,"most recent 200,000 validation and test rows"
+PaySim,N,selected,OneClassSVM,"{""gamma"": 0.1}",0.0225898291849236,0.216357481276372,"most recent 200,000 validation and test rows"
+PaySim,N,selected,DBSCAN,"{""min_samples"": 25}",0.0191455464203136,0.2168710393100358,"most recent 200,000 validation and test rows"
+PaySim,N,selected,KMeans,"{""k"": 32}",0.0114080965475895,0.1377676766716924,"most recent 200,000 validation and test rows"
+PaySim,N,selected,Ensemble,members at the selected configuration,0.0777832221530977,0.0708132376629163,"most recent 200,000 validation and test rows"
+PaySim,N,selected,Ensemble4,members at the selected configuration,0.082946123416838,0.0694792483934479,"most recent 200,000 validation and test rows"
